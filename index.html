@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richfield | Premium Chair Collection</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/nav-foot.css">
+    <link rel="stylesheet" href="./css/card.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="nav-wrapper" id="islandContainer">
+        <nav class="navbar">
+            <div class="logo">RICHFIELD.</div>
+            <ul class="nav-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./cardSearch.html">Furniture</a></li>
+                <li><a href="./aboutus.html">About Us</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="mobile-toggle" id="mobileToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div id="auth-btns" style="display:flex;gap:12px;align-items:center;">
+                    <a href="./login.html" class="btn-ghost">Log In</a>
+                    <a href="./signup.html" class="btn-primary">Sign Up <span class="arrow-icon">&#8594;</span></a>
+                </div>
+                <div id="user-profile" style="display:none;align-items:center;gap:15px;">
+                    <span id="user-greeting" style="color:#a89585;font-size:0.85rem;letter-spacing:0.05em;"></span>
+                    <div class="profile-icon" id="logout-trigger"
+                        style="width:40px;height:40px;background:var(--caramel);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#1a1008;font-weight:700;cursor:pointer;border:2px solid rgba(200,155,110,0.3);transition:0.3s;">
+                        <span id="user-initial">U</span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="hero-video-container">
+            <video src="./media/Home (2).mp4" autoplay loop muted playsinline class="hero-video"></video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <p class="hero-eyebrow" data-aos="fade-down" data-aos-duration="700">Karachi, Pakistan &mdash; Est. 1998</p>
+            <h1 data-aos="fade-up" data-aos-duration="900" data-aos-delay="100">
+                Elevate Your<br><em>Comfort</em>
+            </h1>
+            <p class="hero-sub" data-aos="fade-up" data-aos-duration="800" data-aos-delay="220">
+                Premium chairs for people who refuse to compromise.
+            </p>
+            <div class="hero-btns" data-aos="fade-up" data-aos-duration="700" data-aos-delay="340">
+                <a href="#featured" class="h-btn-primary">Explore Collection &#8594;</a>
+                <a href="#abouts" class="h-btn-ghost">Our Story</a>
+            </div>
+        </div>
+        <div class="hero-scroll-hint">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ===== MARQUEE ===== -->
+    <div class="home-marquee">
+        <div class="marquee-track">
+            <span>Herman Miller &nbsp;&bull;&nbsp;</span>
+            <span>Steelcase &nbsp;&bull;&nbsp;</span>
+            <span>Haworth &nbsp;&bull;&nbsp;</span>
+            <span>Humanscale &nbsp;&bull;&nbsp;</span>
+            <span>Leo Series &nbsp;&bull;&nbsp;</span>
+            <span>Premium Ergonomics &nbsp;&bull;&nbsp;</span>
+            <span>Built to Last &nbsp;&bull;&nbsp;</span>
+            <span>Herman Miller &nbsp;&bull;&nbsp;</span>
+            <span>Steelcase &nbsp;&bull;&nbsp;</span>
+            <span>Haworth &nbsp;&bull;&nbsp;</span>
+            <span>Humanscale &nbsp;&bull;&nbsp;</span>
+            <span>Leo Series &nbsp;&bull;&nbsp;</span>
+            <span>Premium Ergonomics &nbsp;&bull;&nbsp;</span>
+            <span>Built to Last &nbsp;&bull;&nbsp;</span>
+        </div>
+    </div>
+
+    <!-- ===== FEATURED CARDS ===== -->
+    <section class="featured-section" id="featured">
+        <div class="featured-header" data-aos="fade-up" data-aos-duration="700">
+            <span class="section-tag">01 / Featured</span>
+            <h2>Our Finest <em>Selections</em></h2>
+            <p>Handpicked by our ergonomics team — every chair tested and approved.</p>
+        </div>
+
+        <div class="home-cards-grid">
+            <div class="hcard" data-aos="fade-up" data-aos-duration="700" data-aos-delay="0">
+                <div class="hcard-top">
+                    <span class="hcard-brand">Steelcase</span>
+                    <span class="hcard-sku">CH-LEAP-V2</span>
+                </div>
+                <div class="hcard-img">
+                    <img src="./media/chair (1).jpg" alt="Leap V2">
+                </div>
+                <div class="hcard-bottom">
+                    <h3>Leap V2 <span>Series</span></h3>
+                    <span class="hcard-price">$1,099</span>
+                    <div class="hcard-actions">
+                        <button onclick="showBagToast('Leap V2')">Add to Bag</button>
+                        <a href="./cardSearch.html">View All</a>
+                    </div>
+                </div>
+                <div class="hcard-bar"></div>
+            </div>
+
+            <div class="hcard" data-aos="fade-up" data-aos-duration="700" data-aos-delay="80">
+                <div class="hcard-top">
+                    <span class="hcard-brand">Herman Miller</span>
+                    <span class="hcard-sku">HM-AERON-RM</span>
+                </div>
+                <div class="hcard-img">
+                    <img src="./media/chair (2).jpg" alt="Aeron" onerror="this.style.opacity='0.3'">
+                </div>
+                <div class="hcard-bottom">
+                    <h3>Aeron <span>Remastered</span></h3>
+                    <span class="hcard-price">$1,460</span>
+                    <div class="hcard-actions">
+                        <button onclick="showBagToast('Aeron Remastered')">Add to Bag</button>
+                        <a href="./cardSearch.html">View All</a>
+                    </div>
+                </div>
+                <div class="hcard-bar"></div>
+            </div>
+
+            <div class="hcard" data-aos="fade-up" data-aos-duration="700" data-aos-delay="160">
+                <div class="hcard-top">
+                    <span class="hcard-brand">Haworth</span>
+                    <span class="hcard-sku">HW-FERN-001</span>
+                </div>
+                <div class="hcard-img">
+                    <img src="./media/chair (3).jpg" alt="Fern" onerror="this.style.opacity='0.3'">
+                </div>
+                <div class="hcard-bottom">
+                    <h3>Fern <span>Digital Knit</span></h3>
+                    <span class="hcard-price">$1,470</span>
+                    <div class="hcard-actions">
+                        <button onclick="showBagToast('Fern Digital Knit')">Add to Bag</button>
+                        <a href="./cardSearch.html">View All</a>
+                    </div>
+                </div>
+                <div class="hcard-bar"></div>
+            </div>
+
+            <div class="hcard" data-aos="fade-up" data-aos-duration="700" data-aos-delay="240">
+                <div class="hcard-top">
+                    <span class="hcard-brand">Humanscale</span>
+                    <span class="hcard-sku">HS-FREE-HR</span>
+                </div>
+                <div class="hcard-img">
+                    <img src="./media/chair (4).jpg" alt="Freedom" onerror="this.style.opacity='0.3'">
+                </div>
+                <div class="hcard-bottom">
+                    <h3>Freedom <span>Headrest</span></h3>
+                    <span class="hcard-price">$1,549</span>
+                    <div class="hcard-actions">
+                        <button onclick="showBagToast('Freedom Headrest')">Add to Bag</button>
+                        <a href="./cardSearch.html">View All</a>
+                    </div>
+                </div>
+                <div class="hcard-bar"></div>
+            </div>
+
+            <div class="hcard" data-aos="fade-up" data-aos-duration="700" data-aos-delay="320">
+                <div class="hcard-top">
+                    <span class="hcard-brand">Steelcase</span>
+                    <span class="hcard-sku">CH-GEST-V1</span>
+                </div>
+                <div class="hcard-img">
+                    <img src="./media/chair (5).jpg" alt="Gesture" onerror="this.style.opacity='0.3'">
+                </div>
+                <div class="hcard-bottom">
+                    <h3>Gesture <span>Core Series</span></h3>
+                    <span class="hcard-price">$1,499</span>
+                    <div class="hcard-actions">
+                        <button onclick="showBagToast('Gesture Core')">Add to Bag</button>
+                        <a href="./cardSearch.html">View All</a>
+                    </div>
+                </div>
+                <div class="hcard-bar"></div>
+            </div>
+
+            <div class="hcard" data-aos="fade-up" data-aos-duration="700" data-aos-delay="400">
+                <div class="hcard-top">
+                    <span class="hcard-brand">Herman Miller</span>
+                    <span class="hcard-sku">HM-EMB-G</span>
+                </div>
+                <div class="hcard-img">
+                    <img src="./media/chair (6).jpg" alt="Embody" onerror="this.style.opacity='0.3'">
+                </div>
+                <div class="hcard-bottom">
+                    <h3>Embody <span>Sync Series</span></h3>
+                    <span class="hcard-price">$2,110</span>
+                    <div class="hcard-actions">
+                        <button onclick="showBagToast('Embody Sync')">Add to Bag</button>
+                        <a href="./cardSearch.html">View All</a>
+                    </div>
+                </div>
+                <div class="hcard-bar"></div>
+            </div>
+        </div>
+
+        <div class="view-all-wrap" data-aos="fade-up">
+            <a href="./cardSearch.html" class="view-all-btn">Browse Full Collection &#8594;</a>
+        </div>
+    </section>
+
+    <!-- ===== STAT STRIP ===== -->
+    <div class="stat-strip" data-aos="fade-up" data-aos-duration="700">
+        <div class="ss-item"><span class="ss-num">26+</span><span class="ss-label">Years in Industry</span></div>
+        <div class="ss-div"></div>
+        <div class="ss-item"><span class="ss-num">140k+</span><span class="ss-label">Chairs Delivered</span></div>
+        <div class="ss-div"></div>
+        <div class="ss-item"><span class="ss-num">5</span><span class="ss-label">Global Brands</span></div>
+        <div class="ss-div"></div>
+        <div class="ss-item"><span class="ss-num">98%</span><span class="ss-label">Satisfaction Rate</span></div>
+    </div>
+
+    <!-- ===== WHY RICHFIELD ===== -->
+    <section class="why-section">
+        <div class="why-inner">
+            <div class="why-text" data-aos="fade-right" data-aos-duration="800">
+                <span class="section-tag">02 / Why Us</span>
+                <h2>Not just a chair.<br><em>An investment.</em></h2>
+                <p>Every chair in our collection is stress-tested, ergonomically verified, and personally approved. We
+                    don't list what's popular — we list what's right.</p>
+                <a href="./aboutus.html" class="btn-outline-gold">Our Story &#8594;</a>
+            </div>
+            <div class="why-pillars" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100">
+                <div class="pillar">
+                    <div class="pillar-icon"><i class="fas fa-gem"></i></div>
+                    <div>
+                        <h4>Premium Materials</h4>
+                        <p>Top-grain leathers, sustainably sourced hardwoods, aircraft-grade alloys.</p>
+                    </div>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-icon"><i class="fas fa-brain"></i></div>
+                    <div>
+                        <h4>Ergonomic Science</h4>
+                        <p>Orthopedic-tested designs that support your posture for the long haul.</p>
+                    </div>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-icon"><i class="fas fa-truck"></i></div>
+                    <div>
+                        <h4>White-Glove Delivery</h4>
+                        <p>Delivered and set up across Pakistan with zero assembly stress.</p>
+                    </div>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div>
+                        <h4>Up to 15-Year Warranty</h4>
+                        <p>Full manufacturer warranty honoured on every purchase.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BRANDS ===== -->
+    <section class="brands-section" data-aos="fade-up" data-aos-duration="700">
+        <div class="brands-inner">
+            <span class="section-tag" style="text-align:center;display:block;margin-bottom:14px;">03 / Brands</span>
+            <h2 style="text-align:center;margin-bottom:48px;">Trusted names.<br><em>Uncompromised quality.</em></h2>
+            <div class="brands-grid">
+                <div class="brand-pill" data-aos="zoom-in" data-aos-delay="0">Herman Miller</div>
+                <div class="brand-pill" data-aos="zoom-in" data-aos-delay="60">Steelcase</div>
+                <div class="brand-pill" data-aos="zoom-in" data-aos-delay="120">Haworth</div>
+                <div class="brand-pill" data-aos="zoom-in" data-aos-delay="180">Humanscale</div>
+                <div class="brand-pill" data-aos="zoom-in" data-aos-delay="240">Leo</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT STRIP ===== -->
+    <section class="home-about" id="abouts">
+        <div class="about-inner">
+            <div class="about-text" data-aos="fade-right" data-aos-duration="800">
+                <span class="section-tag">04 / Heritage</span>
+                <h2>The Richfield<br><em>Standard</em></h2>
+                <p>Crafting the seat of comfort since 1998 in Karachi, Pakistan. We don't just sell furniture — we
+                    engineer experiences built around the human form.</p>
+                <a href="./aboutus.html" class="btn-outline-gold">Read Our Story &#8594;</a>
+            </div>
+            <div class="about-stats" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100">
+                <div class="stat-item">
+                    <h3>25+</h3>
+                    <p>Years of Craft</p>
+                </div>
+                <div class="stat-item">
+                    <h3>140k+</h3>
+                    <p>Happy Customers</p>
+                </div>
+                <div class="stat-item">
+                    <h3>15yr</h3>
+                    <p>Max Warranty</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="home-contact">
+        <div class="contact-glass-card" data-aos="fade-up" data-aos-duration="800">
+            <div class="contact-header">
+                <span class="section-tag" style="text-align:center;display:block;">05 / Get in Touch</span>
+                <h2>Start a <em>Conversation</em></h2>
+                <p>Ready to elevate your space? Our team is here to help you find the perfect seat.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info-brief">
+                    <p><i class="fas fa-envelope"></i> &nbsp;chairsupport@richfield.pk</p>
+                    <p><i class="fas fa-location-dot"></i> &nbsp;562 Shahrae Faisal, Karachi</p>
+                    <p><i class="fas fa-phone"></i> &nbsp;+92 21 000 0000</p>
+                </div>
+                <a href="./contact.html" class="h-btn-primary">Message Us &#8594;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="#" class="logo">RICHFIELD.</a>
+                <p style="margin-top:20px;color:rgba(255,255,255,0.35);font-size:0.85rem;line-height:1.7;">Premium
+                    artisan furniture designed for the modern home. Proudly serving Pakistan since 1998.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="./cardSearch.html">Collections</a></li>
+                    <li><a href="./aboutus.html">About Us</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="./faqs.html">FAQs</a></li>
+                    <li><a href="./comparison.html">Compare</a></li>
+                    <li><a href="./policy.html">Shop Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2026 Richfield. All Rights Reserved. &mdash; Karachi, Pakistan</div>
+    </footer>
+
+    <!-- Toast -->
+    <div id="bagToast" class="bag-toast"></div>
+
+    <script src="./js/nav-foot.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 50 });
+
+        function showBagToast(name) {
+            const toast = document.getElementById('bagToast');
+            toast.innerHTML = '';
+            const icon = document.createElement('div'); icon.className = 'toast-icon'; icon.textContent = String.fromCharCode(10003);
+            const txt = document.createElement('div'); txt.className = 'toast-text';
+            const t = document.createElement('span'); t.className = 'toast-title'; t.textContent = 'Added to Bag';
+            const s = document.createElement('span'); s.className = 'toast-sub'; s.textContent = name;
+            const x = document.createElement('button'); x.className = 'toast-close'; x.textContent = String.fromCharCode(215); x.onclick = () => toast.classList.remove('toast-show');
+            txt.appendChild(t); txt.appendChild(s);
+            toast.appendChild(icon); toast.appendChild(txt); toast.appendChild(x);
+            toast.classList.add('toast-show');
+            setTimeout(() => toast.classList.remove('toast-show'), 3000);
+        }
+    </script>
+</body>
+
+</html>

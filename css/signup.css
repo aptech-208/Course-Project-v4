@@ -1,0 +1,108 @@
+:root {
+    --caramel: #C89B6E;
+    --caramel-light: #D9B48F;
+    --wood-dark: #1a1008;
+    --text-light: #f0e8df;
+    --text-muted: #a89585;
+    --border: rgba(200, 155, 110, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #050505;
+    background-image: radial-gradient(circle at center, #1a1008 0%, #050505 100%);
+    color: var(--text-light);
+}
+
+.signup-card {
+    width: 100%;
+    max-width: 450px;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(20px);
+    padding: 40px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.5rem;
+    letter-spacing: 0.25em;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.logo span {
+    color: var(--caramel);
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+    color: var(--text-muted);
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    color: white;
+    outline: none;
+}
+
+input:focus {
+    border-color: var(--caramel);
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    background: var(--caramel);
+    color: var(--wood-dark);
+    border: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background: var(--caramel-light);
+    transform: translateY(-2px);
+}
+
+.footer {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.footer a {
+    color: var(--caramel);
+    text-decoration: none;
+    margin-left: 5px;
+}

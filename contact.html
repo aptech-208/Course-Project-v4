@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richfield | Contact Concierge</title>
+    <link rel="stylesheet" href="./css/contact.css">
+    <link rel="stylesheet" href="./css/nav-foot.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&family=Playfair+Display:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="nav-wrapper" id="islandContainer">
+        <nav class="navbar">
+            <div class="logo">RICHFIELD.</div>
+
+            <ul class="nav-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./cardSearch.html">Furniture</a></li>
+                <li><a href="./aboutus.html">About Us</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <div id="auth-btns" style="display: flex; gap: 12px; align-items: center;">
+                    <a href="./login.html" class="btn-ghost">Log In</a>
+                    <a href="./signup.html" class="btn-primary">Sign Up <span class="arrow-icon">→</span></a>
+                </div>
+
+                <div id="user-profile" style="display: none; align-items: center; gap: 15px;">
+                    <span id="user-greeting" style="color: #a89585; font-size: 0.85rem; letter-spacing: 0.05em;"></span>
+                    <div class="profile-icon" id="logout-trigger"
+                        style="width: 40px; height: 40px; background: var(--caramel); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #1a1008; font-weight: 700; cursor: pointer; border: 2px solid rgba(200,155,110,0.3); transition: 0.3s;">
+                        <span id="user-initial">U</span>
+                    </div>
+                </div>
+            </div>
+
+        </nav>
+    </div>
+
+    <section class="contact-hero" data-aos="fade-in">
+        <div class="hero-content">
+            <p class="subtitle" data-aos="fade-up" data-aos-delay="200">ESTABLISHED IN KARACHI</p>
+            <h1 data-aos="fade-up" data-aos-delay="400">At Your Service</h1>
+            <div class="accent-line" data-aos="stretch-right" data-aos-delay="600"></div>
+        </div>
+    </section>
+
+    <div class="contact-container">
+        <div class="contact-upper-grid">
+
+            <div class="form-wrapper" data-aos="fade-right" data-aos-delay="200">
+                <form id="contactForm">
+                    <div class="input-group">
+                        <label>Full Name</label>
+                        <input type="text" id="name" placeholder="John Doe" required>
+                        <span class="error-msg" id="nameError">Minimum 3 characters required</span>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <input type="email" id="email" placeholder="client@richfield.com" required>
+                        <span class="error-msg" id="emailError">Please enter a valid email</span>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Message</label>
+                        <textarea id="message" placeholder="Describe your bespoke requirements..." required></textarea>
+                        <span class="error-msg" id="messageError">Minimum 10 characters required</span>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Inquiry</button>
+                </form>
+            </div>
+
+            <div class="info-sidebar" data-aos="fade-left" data-aos-delay="400">
+                <div class="info-box">
+                    <p class="subtitle" style="margin-bottom: 30px;">PAKISTAN ATELIER</p>
+
+                    <div class="info-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>Main Shahrah-e-Faisal, PECHS Block 6, Karachi, Pakistan</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <h4>Private Line</h4>
+                            <p>+92 21 35810931</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <h4>Email Concierge</h4>
+                            <a href="mailto:concierge@richfield.com" class="clickable-email">concierge@richfield.com</a>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <p class="subtitle" style="font-size: 0.6rem; margin-top: 20px;">FOLLOW OUR JOURNEY</p>
+                        <div class="social-icons">
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-brands fa-pinterest"></i>
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="map-full-width" data-aos="zoom-in-up">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.907952794101!2d67.062024!3d24.860163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33e98634e56bb%3A0x959714856f6f2541!2sShahrah-e-Faisal%2C%20Karachi!5e0!3m2!1sen!2spk!4v1700000000000"
+            width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="#" class="logo">RICHFIELD.</a>
+                <p style="margin-top:20px;color:rgba(255,255,255,0.35);font-size:0.85rem;line-height:1.7;">Premium
+                    artisan furniture designed for the modern home. Proudly serving Pakistan since 1998.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="./cardSearch.html">Collections</a></li>
+                    <li><a href="./aboutus.html">About Us</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="./faqs.html">FAQs</a></li>
+                    <li><a href="./comparison.html">Compare</a></li>
+                    <li><a href="./policy.html">Shop Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2026 Richfield. All Rights Reserved. &mdash; Karachi, Pakistan</div>
+    </footer>
+
+    <script src="./js/nav-foot.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        const patterns = {
+            name: /^[a-zA-Z\s]{3,50}$/,
+            email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+            message: /^.{10,}$/
+        };
+
+        function validate(id, regex) {
+            const el = document.getElementById(id);
+            const err = document.getElementById(id + 'Error');
+            const valid = regex.test(el.value.trim());
+
+            if (!valid && el.value.length > 0) {
+                el.style.borderBottomColor = "#ff4d4d";
+                err.style.display = "block";
+            } else {
+                el.style.borderBottomColor = "rgba(200,155,110,0.3)";
+                err.style.display = "none";
+            }
+            return valid;
+        }
+
+        ['name', 'email', 'message'].forEach(id => {
+            document.getElementById(id).addEventListener('input', () => validate(id, patterns[id]));
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (validate('name', patterns.name) && validate('email', patterns.email) && validate('message', patterns.message)) {
+                Swal.fire({
+                    title: 'Message Sent',
+                    text: 'Our Karachi team will be in touch.',
+                    icon: 'success',
+                    background: '#1a1008',
+                    color: '#f0e8df',
+                    confirmButtonColor: '#C89B6E'
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

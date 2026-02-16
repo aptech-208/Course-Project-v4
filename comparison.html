@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Chairs | Richfield</title>
+    <link rel="stylesheet" href="./css/comparison.css">
+    <link rel="stylesheet" href="./css/nav-foot.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="nav-wrapper" id="islandContainer">
+        <nav class="navbar">
+            <div class="logo">RICHFIELD.</div>
+            <ul class="nav-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./cardSearch.html">Furniture</a></li>
+                <li><a href="./aboutus.html">About Us</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div id="auth-btns" style="display:flex;gap:12px;align-items:center;">
+                    <a href="./login.html" class="btn-ghost">Log In</a>
+                    <a href="./signup.html" class="btn-primary">Sign Up <span class="arrow-icon">&#8594;</span></a>
+                </div>
+                <div id="user-profile" style="display:none;align-items:center;gap:15px;">
+                    <span id="user-greeting" style="color:#a89585;font-size:0.85rem;letter-spacing:0.05em;"></span>
+                    <div class="profile-icon" id="logout-trigger"
+                        style="width:40px;height:40px;background:var(--caramel);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#1a1008;font-weight:700;cursor:pointer;border:2px solid rgba(200,155,110,0.3);transition:0.3s;">
+                        <span id="user-initial">U</span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <a href="./cardSearch.html" class="back-link">&#8592; Back to Collection</a>
+        <div class="header-text">
+            <span class="page-tag">Side by Side</span>
+            <h1>Chair <em>Comparison</em></h1>
+            <p id="selectionCount">Loading...</p>
+        </div>
+    </div>
+
+    <!-- Comparison Content -->
+    <div class="comp-container">
+
+        <!-- Empty State -->
+        <div class="empty-state" id="emptyState" style="display:none;">
+            <i class="fas fa-chair"></i>
+            <h2>Nothing to compare yet</h2>
+            <p>Head back to the collection and select up to 4 chairs to compare side by side.</p>
+            <a href="./cardSearch.html" class="go-back-btn">Browse Collection &#8594;</a>
+        </div>
+
+        <!-- Table -->
+        <div id="tableWrapper"></div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="#" class="logo">RICHFIELD.</a>
+                <p style="margin-top:20px;color:rgba(255,255,255,0.35);font-size:0.85rem;line-height:1.7;">Premium
+                    artisan furniture designed for the modern home. Proudly serving Pakistan since 1998.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="./cardSearch.html">Collections</a></li>
+                    <li><a href="./aboutus.html">About Us</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="./faqs.html">FAQs</a></li>
+                    <li><a href="./comparison.html">Compare</a></li>
+                    <li><a href="./policy.html">Shop Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2026 Richfield. All Rights Reserved. &mdash; Karachi, Pakistan</div>
+    </footer>
+
+    <script src="./js/nav-foot.js"></script>
+    <script src="./js/comparison.js"></script>
+</body>
+
+</html>

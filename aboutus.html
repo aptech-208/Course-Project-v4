@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Richfield Chairs</title>
+    <link rel="stylesheet" href="./css/aboutus.css">
+    <link rel="stylesheet" href="./css/nav-foot.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Floating Promo Ad -->
+    <div class="promo-float" id="promoFloat">
+        <button class="promo-close"
+            onclick="document.getElementById('promoFloat').style.display='none'">&#10005;</button>
+        <div class="promo-tag">Limited Offer</div>
+        <h3 class="promo-title">Free Delivery<br>This Week Only</h3>
+        <p class="promo-sub">On all orders over PKR 50,000</p>
+        <div class="promo-countdown">
+            <div class="cd-block"><span id="cd-h">00</span><label>hrs</label></div>
+            <div class="cd-sep">:</div>
+            <div class="cd-block"><span id="cd-m">00</span><label>min</label></div>
+            <div class="cd-sep">:</div>
+            <div class="cd-block"><span id="cd-s">00</span><label>sec</label></div>
+        </div>
+        <a href="./cardSearch.html" class="promo-btn">Shop Now &rarr;</a>
+    </div>
+
+    <!-- Navbar -->
+    <div class="nav-wrapper" id="islandContainer">
+        <nav class="navbar">
+            <div class="logo">RICHFIELD.</div>
+            <ul class="nav-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./cardSearch.html">Furniture</a></li>
+                <li><a href="./aboutus.html">About Us</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div id="auth-btns" style="display:flex;gap:12px;align-items:center;">
+                    <a href="./login.html" class="btn-ghost">Log In</a>
+                    <a href="./signup.html" class="btn-primary">Sign Up <span class="arrow-icon">&#8594;</span></a>
+                </div>
+                <div id="user-profile" style="display:none;align-items:center;gap:15px;">
+                    <span id="user-greeting" style="color:#a89585;font-size:0.85rem;letter-spacing:0.05em;"></span>
+                    <div class="profile-icon" id="logout-trigger"
+                        style="width:40px;height:40px;background:var(--caramel);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#1a1008;font-weight:700;cursor:pointer;border:2px solid rgba(200,155,110,0.3);transition:0.3s;">
+                        <span id="user-initial">U</span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- ===== HERO WITH VIDEO ===== -->
+    <section class="hero">
+        <div class="hero-video-wrap">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="./media/about.mp4" type="video/mp4">
+            </video>
+            <div class="hero-noise"></div>
+            <div class="hero-gradient"></div>
+        </div>
+        <div class="hero-content">
+            <p class="hero-eyebrow" data-aos="fade-down" data-aos-duration="800">Est. 1998 &mdash; Karachi, Pakistan</p>
+            <h1 class="hero-title" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                The Art of<br><em>Perfect Sitting</em>
+            </h1>
+            <p class="hero-sub" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="250">
+                We don't make furniture. We engineer the throne you spend a third of your life in.
+            </p>
+            <div class="hero-scroll" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+        </div>
+        <div class="hero-stat-strip" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
+            <div class="hero-stat">
+                <span class="stat-num" data-target="26">0</span><span class="stat-suffix">yrs</span>
+                <span class="stat-label">In the Industry</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="hero-stat">
+                <span class="stat-num" data-target="140">0</span><span class="stat-suffix">k+</span>
+                <span class="stat-label">Chairs Sold</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="hero-stat">
+                <span class="stat-num" data-target="5">0</span><span class="stat-suffix"></span>
+                <span class="stat-label">Global Brands</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="hero-stat">
+                <span class="stat-num" data-target="98">0</span><span class="stat-suffix">%</span>
+                <span class="stat-label">Customer Satisfaction</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MANIFESTO ===== -->
+    <section class="manifesto-section">
+        <div class="container">
+            <div class="manifesto-grid">
+                <div class="manifesto-label" data-aos="fade-right" data-aos-duration="800">
+                    <span>01 / Our Belief</span>
+                </div>
+                <div class="manifesto-text" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                    <h2>A chair isn't just furniture.<br>It's where <em>life happens.</em></h2>
+                    <p>The world's greatest ideas were thought from a seated position. The deals that shaped industries,
+                        the novels that moved generations, the code that changed everything — all born in a chair. We
+                        take that seriously.</p>
+                    <p>Richfield was founded on a single, radical belief: that the seat beneath you should work as hard
+                        as you do — silently, perfectly, for decades.</p>
+                </div>
+            </div>
+        </div>
+        <div class="manifesto-marquee">
+            <div class="marquee-track">
+                <span>Premium Ergonomics &nbsp;&bull;&nbsp;</span>
+                <span>Artisan Craftsmanship &nbsp;&bull;&nbsp;</span>
+                <span>Timeless Design &nbsp;&bull;&nbsp;</span>
+                <span>Human-Centered &nbsp;&bull;&nbsp;</span>
+                <span>Built to Last &nbsp;&bull;&nbsp;</span>
+                <span>Proudly Pakistani &nbsp;&bull;&nbsp;</span>
+                <span>Premium Ergonomics &nbsp;&bull;&nbsp;</span>
+                <span>Artisan Craftsmanship &nbsp;&bull;&nbsp;</span>
+                <span>Timeless Design &nbsp;&bull;&nbsp;</span>
+                <span>Human-Centered &nbsp;&bull;&nbsp;</span>
+                <span>Built to Last &nbsp;&bull;&nbsp;</span>
+                <span>Proudly Pakistani &nbsp;&bull;&nbsp;</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== STORY ===== -->
+    <section class="story-section">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-image-col" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="story-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80"
+                            alt="Our Workshop">
+                        <div class="story-img-overlay"><span>Our First Workshop &mdash; 1998, Karachi</span></div>
+                    </div>
+                    <div class="story-img-secondary" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
+                        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80"
+                            alt="Craftsmanship">
+                    </div>
+                </div>
+                <div class="story-text-col">
+                    <div class="section-tag" data-aos="fade-left" data-aos-duration="600">02 / Our Story</div>
+                    <h2 data-aos="fade-left" data-aos-duration="800" data-aos-delay="100">From Karachi<br>to the world.
+                    </h2>
+                    <p data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">It started in a small studio in
+                        Defence Housing Authority, Karachi. Our founder had a problem: every chair he owned failed
+                        within two years. So he built one himself — and never looked back.</p>
+                    <p data-aos="fade-left" data-aos-duration="800" data-aos-delay="300">Word spread across Karachi,
+                        then Lahore, then globally. By 2010, Richfield chairs were in corporate offices across 40
+                        countries.</p>
+                    <p data-aos="fade-left" data-aos-duration="800" data-aos-delay="350">Today we curate the finest
+                        ergonomic chairs on earth — because great seating shouldn't require a custom order.</p>
+                    <div class="story-timeline" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                        <div class="timeline-item"><span class="t-year">1998</span><span class="t-event">Founded in
+                                Karachi, Pakistan</span></div>
+                        <div class="timeline-item"><span class="t-year">2005</span><span class="t-event">First
+                                international partnership</span></div>
+                        <div class="timeline-item"><span class="t-year">2014</span><span class="t-event">100,000 chairs
+                                milestone</span></div>
+                        <div class="timeline-item"><span class="t-year">2026</span><span class="t-event">Launched
+                                digital storefront</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== VALUES ===== -->
+    <section class="values-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up" data-aos-duration="800">
+                <div class="section-tag">03 / Our Values</div>
+                <h2>What we stand for,<br><em>every single day.</em></h2>
+            </div>
+            <div class="values-grid">
+                <div class="value-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="0">
+                    <div class="value-icon"><i class="fas fa-gem"></i></div>
+                    <div class="value-number">01</div>
+                    <h3>Premium Materials</h3>
+                    <p>From sustainably sourced hardwoods to top-grain leathers — every material is chosen with purpose.
+                    </p>
+                    <div class="value-bar"></div>
+                </div>
+                <div class="value-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
+                    <div class="value-icon"><i class="fas fa-brain"></i></div>
+                    <div class="value-number">02</div>
+                    <h3>Ergonomic Science</h3>
+                    <p>Every design is tested against rigorous orthopedic standards. Your spine deserves engineering.
+                    </p>
+                    <div class="value-bar"></div>
+                </div>
+                <div class="value-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    <div class="value-icon"><i class="fas fa-infinity"></i></div>
+                    <div class="value-number">03</div>
+                    <h3>Timeless Design</h3>
+                    <p>We avoid fast-furniture trends. A Richfield chair looks as modern in twenty years as it does
+                        today.</p>
+                    <div class="value-bar"></div>
+                </div>
+                <div class="value-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="450">
+                    <div class="value-icon"><i class="fas fa-leaf"></i></div>
+                    <div class="value-number">04</div>
+                    <h3>Earth First</h3>
+                    <p>Carbon-neutral by 2030. For every tree used, two are planted. Luxury shouldn't cost the planet.
+                    </p>
+                    <div class="value-bar"></div>
+                </div>
+                <div class="value-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
+                    <div class="value-icon"><i class="fas fa-handshake"></i></div>
+                    <div class="value-number">05</div>
+                    <h3>Honest Curation</h3>
+                    <p>We only carry chairs we'd put our own name on. If it doesn't pass our test, it doesn't ship.</p>
+                    <div class="value-bar"></div>
+                </div>
+                <div class="value-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="750">
+                    <div class="value-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="value-number">06</div>
+                    <h3>Lifetime Support</h3>
+                    <p>Every chair comes with dedicated aftercare. We stand behind what we sell, long after purchase.
+                    </p>
+                    <div class="value-bar"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROCESS ===== -->
+    <section class="process-section">
+        <div class="process-bg"></div>
+        <div class="container">
+            <div class="section-header" data-aos="fade-up" data-aos-duration="800">
+                <div class="section-tag">04 / How We Work</div>
+                <h2>Obsessive about<br><em>every detail.</em></h2>
+            </div>
+            <div class="process-steps">
+                <div class="process-step" data-aos="fade-right" data-aos-duration="900" data-aos-delay="0">
+                    <div class="step-num">01</div>
+                    <div class="step-content">
+                        <h3>Research &amp; Selection</h3>
+                        <p>Our team evaluates hundreds of chairs annually. Only the top 2% make the cut.</p>
+                    </div>
+                </div>
+                <div class="process-step" data-aos="fade-right" data-aos-duration="900" data-aos-delay="150">
+                    <div class="step-num">02</div>
+                    <div class="step-content">
+                        <h3>Stress Testing</h3>
+                        <p>Every chair endures 10,000 sit cycles, load-bearing tests, and material fatigue analysis
+                            before listing.</p>
+                    </div>
+                </div>
+                <div class="process-step" data-aos="fade-right" data-aos-duration="900" data-aos-delay="300">
+                    <div class="step-num">03</div>
+                    <div class="step-content">
+                        <h3>Expert Curation</h3>
+                        <p>We don't list everything — we list the right things. Each model is matched to specific use
+                            cases and body types.</p>
+                    </div>
+                </div>
+                <div class="process-step" data-aos="fade-right" data-aos-duration="900" data-aos-delay="450">
+                    <div class="step-num">04</div>
+                    <div class="step-content">
+                        <h3>Delivered to You</h3>
+                        <p>White-glove delivery across Pakistan, zero assembly stress, and a 30-day satisfaction
+                            guarantee.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SUSTAINABILITY ===== -->
+    <section class="sustain-section">
+        <div class="container">
+            <div class="sustain-grid">
+                <div class="sustain-text" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="section-tag">05 / Planet</div>
+                    <h2>Luxury with<br><em>a conscience.</em></h2>
+                    <p>We believe the most beautiful things shouldn't cost the earth. Richfield operates with a
+                        zero-waste workshop mandate, uses recycled alloys in all frame construction, and partners only
+                        with brands that share our environmental standards.</p>
+                    <p>Our 2030 pledge: full carbon neutrality across our supply chain. Every purchase today funds a
+                        tree planted tomorrow.</p>
+                    <div class="sustain-badges">
+                        <div class="badge" data-aos="zoom-in" data-aos-delay="200"><i
+                                class="fas fa-recycle"></i><span>Zero Waste<br>Workshop</span></div>
+                        <div class="badge" data-aos="zoom-in" data-aos-delay="350"><i class="fas fa-tree"></i><span>2x
+                                Trees<br>Planted</span></div>
+                        <div class="badge" data-aos="zoom-in" data-aos-delay="500"><i
+                                class="fas fa-wind"></i><span>Carbon Neutral<br>by 2030</span></div>
+                    </div>
+                </div>
+                <div class="sustain-image" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&w=800&q=80"
+                        alt="Sustainability">
+                    <div class="sustain-pull-quote">
+                        <p>"For every tree used<br>in our frames, two<br>more are planted."</p>
+                        <cite>&mdash; Daniel, Founder</cite>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TEAM ===== -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up" data-aos-duration="800">
+                <div class="section-tag">06 / The People</div>
+                <h2>Built by humans,<br><em>for humans.</em></h2>
+            </div>
+            <div class="team-grid">
+                <div class="team-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="0">
+                    <div class="team-img">
+                        <div class="default-avatar" style="--avatar-color:#c8966e;">D</div>
+                        <div class="team-img-overlay"></div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Daniel</h3>
+                        <span>Leader &amp; Founder</span>
+                        <p>Visionary behind Richfield. Based in Karachi, Daniel built the company from a single workshop
+                            into a nationally recognised premium chair destination.</p>
+                        <div class="team-location"><i class="fas fa-map-marker-alt"></i> Karachi, Pakistan</div>
+                    </div>
+                </div>
+                <div class="team-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
+                    <div class="team-img">
+                        <div class="default-avatar" style="--avatar-color:#7a6a5a;">R</div>
+                        <div class="team-img-overlay"></div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Ryan</h3>
+                        <span>Co-Founder &amp; Head of Design</span>
+                        <p>Ryan leads product curation and aesthetic direction. His eye for detail has defined the
+                            Richfield standard for premium, functional design.</p>
+                        <div class="team-location"><i class="fas fa-map-marker-alt"></i> Lahore, Pakistan</div>
+                    </div>
+                </div>
+                <div class="team-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    <div class="team-img">
+                        <div class="default-avatar" style="--avatar-color:#4a7a6a;">J</div>
+                        <div class="team-img-overlay"></div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Jagdesh</h3>
+                        <span>Chief Ergonomics Officer</span>
+                        <p>Jagdesh brings deep expertise in human kinetics and orthopedic design. He has personally
+                            tested every chair in our catalogue — over 1,200 hours seated.</p>
+                        <div class="team-location"><i class="fas fa-map-marker-alt"></i> Islamabad, Pakistan</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta-section" data-aos="fade-up" data-aos-duration="1000">
+        <div class="cta-inner">
+            <p class="cta-tag">Ready to sit differently?</p>
+            <h2>Find your <em>perfect chair.</em></h2>
+            <a href="./cardSearch.html" class="cta-btn">Browse the Collection <span>&#8594;</span></a>
+        </div>
+        <div class="cta-bg-text">SIT</div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="#" class="logo">RICHFIELD.</a>
+                <p style="margin-top:20px;color:rgba(255,255,255,0.35);font-size:0.85rem;line-height:1.7;">Premium
+                    artisan furniture designed for the modern home. Proudly serving Pakistan since 1998.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="./cardSearch.html">Collections</a></li>
+                    <li><a href="./aboutus.html">About Us</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="./faqs.html">FAQs</a></li>
+                    <li><a href="./comparison.html">Compare</a></li>
+                    <li><a href="./policy.html">Shop Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2026 Richfield. All Rights Reserved. &mdash; Karachi, Pakistan</div>
+    </footer>
+
+    <script src="./js/nav-foot.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 900, once: true, offset: 80 });
+
+        // Animated counters
+        function animateCounters() {
+            document.querySelectorAll('.stat-num').forEach(el => {
+                const target = parseInt(el.getAttribute('data-target'));
+                const step = target / (2000 / 16);
+                let current = 0;
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) { current = target; clearInterval(timer); }
+                    el.textContent = Math.floor(current);
+                }, 16);
+            });
+        }
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) { animateCounters(); observer.disconnect(); } });
+        }, { threshold: 0.3 });
+        const strip = document.querySelector('.hero-stat-strip');
+        if (strip) observer.observe(strip);
+
+        // Parallax hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            const heroBg = document.querySelector('.hero-gradient');
+            if (heroBg) heroBg.style.transform = `translateY(${ scrolled * 0.25 }px)`;
+        });
+
+        // Countdown timer — 23 hours 59 min from now
+        function startCountdown() {
+            let total = 23 * 3600 + 59 * 60;
+            const hEl = document.getElementById('cd-h');
+            const mEl = document.getElementById('cd-m');
+            const sEl = document.getElementById('cd-s');
+            function tick() {
+                if (total <= 0) { clearInterval(t); return; }
+                const h = Math.floor(total / 3600);
+                const m = Math.floor((total % 3600) / 60);
+                const s = total % 60;
+                hEl.textContent = String(h).padStart(2, '0');
+                mEl.textContent = String(m).padStart(2, '0');
+                sEl.textContent = String(s).padStart(2, '0');
+                total--;
+            }
+            tick();
+            const t = setInterval(tick, 1000);
+        }
+        startCountdown();
+
+        // Show promo after 2s
+        setTimeout(() => {
+            const promo = document.getElementById('promoFloat');
+            if (promo) promo.classList.add('promo-visible');
+        }, 2000);
+    </script>
+</body>
+
+</html>
