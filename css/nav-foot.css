@@ -185,6 +185,11 @@ img {
 
 .logo {
     cursor: pointer;
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--text);
+    text-decoration: none;
 }
 
 .nav-links {
@@ -570,6 +575,11 @@ section.reveal {
         padding: 0.85rem 1.1rem;
     }
 
+    .logo {
+        font-size: 1.15rem;
+        letter-spacing: 1.5px;
+    }
+
     .scrolled .navbar {
         width: 88%;
         border-radius: 40px;
@@ -614,6 +624,10 @@ section.reveal {
     .navbar {
         width: 95%;
         padding: 0.75rem 0.9rem;
+    }
+
+    .logo {
+        font-size: 1.05rem;
     }
 
     .scrolled .navbar {
