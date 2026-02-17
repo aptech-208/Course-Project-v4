@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/nav-foot.css">
     <link rel="stylesheet" href="./css/card.css">
+    <link rel="stylesheet" href="./css/responsive-fixes.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link
@@ -20,36 +21,49 @@
 
     <!-- Navbar -->
     <div class="nav-wrapper" id="islandContainer">
+
         <nav class="navbar">
+
             <div class="logo">RICHFIELD.</div>
+
+            <div class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
             <ul class="nav-links">
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="./cardSearch.html">Furniture</a></li>
                 <li><a href="./aboutus.html">About Us</a></li>
                 <li><a href="./contact.html">Contact</a></li>
             </ul>
+
             <div class="nav-actions">
-                <div class="mobile-toggle" id="mobileToggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+
                 <div id="auth-btns" style="display:flex;gap:12px;align-items:center;">
                     <a href="./login.html" class="btn-ghost">Log In</a>
                     <a href="./signup.html" class="btn-primary">Sign Up <span class="arrow-icon">&#8594;</span></a>
                 </div>
+
                 <div id="user-profile" style="display:none;align-items:center;gap:15px;">
+
                     <span id="user-greeting" style="color:#a89585;font-size:0.85rem;letter-spacing:0.05em;"></span>
+
                     <div class="profile-icon" id="logout-trigger"
                         style="width:40px;height:40px;background:var(--caramel);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#1a1008;font-weight:700;cursor:pointer;border:2px solid rgba(200,155,110,0.3);transition:0.3s;">
                         <span id="user-initial">U</span>
                     </div>
+
                 </div>
+
             </div>
+
         </nav>
+
     </div>
 
-    <!-- ===== HERO ===== -->
+    <!--  HERO -->
     <section class="hero">
         <div class="hero-video-container">
             <video src="./media/Home (2).mp4" autoplay loop muted playsinline class="hero-video"></video>
@@ -74,7 +88,7 @@
         </div>
     </section>
 
-    <!-- ===== MARQUEE ===== -->
+    <!-- MARQUEE -->
     <div class="home-marquee">
         <div class="marquee-track">
             <span>Herman Miller &nbsp;&bull;&nbsp;</span>
@@ -94,7 +108,7 @@
         </div>
     </div>
 
-    <!-- ===== FEATURED CARDS ===== -->
+    <!--  FEATURED CARDS -->
     <section class="featured-section" id="featured">
         <div class="featured-header" data-aos="fade-up" data-aos-duration="700">
             <span class="section-tag">01 / Featured</span>
@@ -223,7 +237,7 @@
         </div>
     </section>
 
-    <!-- ===== STAT STRIP ===== -->
+    <!--  STAT STRIP  -->
     <div class="stat-strip" data-aos="fade-up" data-aos-duration="700">
         <div class="ss-item"><span class="ss-num">26+</span><span class="ss-label">Years in Industry</span></div>
         <div class="ss-div"></div>
@@ -234,7 +248,7 @@
         <div class="ss-item"><span class="ss-num">98%</span><span class="ss-label">Satisfaction Rate</span></div>
     </div>
 
-    <!-- ===== WHY RICHFIELD ===== -->
+    <!--  WHY RICHFIELD -->
     <section class="why-section">
         <div class="why-inner">
             <div class="why-text" data-aos="fade-right" data-aos-duration="800">
@@ -277,7 +291,7 @@
         </div>
     </section>
 
-    <!-- ===== BRANDS ===== -->
+    <!--  BRANDS -->
     <section class="brands-section" data-aos="fade-up" data-aos-duration="700">
         <div class="brands-inner">
             <span class="section-tag" style="text-align:center;display:block;margin-bottom:14px;">03 / Brands</span>
@@ -292,7 +306,7 @@
         </div>
     </section>
 
-    <!-- ===== ABOUT STRIP ===== -->
+    <!--  ABOUT STRIP -->
     <section class="home-about" id="abouts">
         <div class="about-inner">
             <div class="about-text" data-aos="fade-right" data-aos-duration="800">
@@ -319,7 +333,7 @@
         </div>
     </section>
 
-    <!-- ===== CONTACT ===== -->
+    <!--  CONTACT-->
     <section class="home-contact">
         <div class="contact-glass-card" data-aos="fade-up" data-aos-duration="800">
             <div class="contact-header">
@@ -338,7 +352,7 @@
         </div>
     </section>
 
-    <!-- ===== FOOTER ===== -->
+    <!--  FOOTER -->
     <footer class="site-footer">
         <div class="footer-grid">
             <div class="footer-col">
@@ -368,7 +382,6 @@
 
     <!-- Toast -->
     <div id="bagToast" class="bag-toast"></div>
-
     <script src="./js/nav-foot.js"></script>
     <script>
         AOS.init({ duration: 800, once: true, offset: 50 });

@@ -4,72 +4,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Chair Collection</title>
-    <link rel="stylesheet" href="./css/cardSearch.css">
-    <link rel="stylesheet" href="./css/nav-foot.css">
+    <title>Furniture Collection | Richfield</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="./css/nav-foot.css">
+    <link rel="stylesheet" href="./css/cardSearch.css">
 </head>
 
 <body>
 
-    <!-- Navbar -->
+    <!-- NAVBAR -->
     <div class="nav-wrapper" id="islandContainer">
         <nav class="navbar">
             <div class="logo">RICHFIELD.</div>
-
+            <div class="mobile-toggle" id="mobileToggle">
+                <span></span><span></span><span></span>
+            </div>
             <ul class="nav-links">
                 <li><a href="./index.html">Home</a></li>
-                <li><a href="./cardSearch.html">Furniture</a></li>
+                <li><a href="./cardSearch.html" class="active">Furniture</a></li>
                 <li><a href="./aboutus.html">About Us</a></li>
                 <li><a href="./contact.html">Contact</a></li>
             </ul>
-
             <div class="nav-actions">
-                <div id="auth-btns" style="display: flex; gap: 12px; align-items: center;">
+                <div id="auth-btns" style="display:flex;gap:12px;align-items:center;">
                     <a href="./login.html" class="btn-ghost">Log In</a>
-                    <a href="./signup.html" class="btn-primary">Sign Up <span class="arrow-icon">→</span></a>
+                    <a href="./signup.html" class="btn-primary">Sign Up <span class="arrow-icon">&#8594;</span></a>
                 </div>
-
-                <div id="user-profile" style="display: none; align-items: center; gap: 15px;">
-                    <span id="user-greeting" style="color: #a89585; font-size: 0.85rem; letter-spacing: 0.05em;"></span>
+                <div id="user-profile" style="display:none;align-items:center;gap:15px;">
+                    <span id="user-greeting" style="color:#a89585;font-size:0.85rem;letter-spacing:0.05em;"></span>
                     <div class="profile-icon" id="logout-trigger"
-                        style="width: 40px; height: 40px; background: var(--caramel); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #1a1008; font-weight: 700; cursor: pointer; border: 2px solid rgba(200,155,110,0.3); transition: 0.3s;">
+                        style="width:40px;height:40px;background:var(--caramel);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#1a1008;font-weight:700;cursor:pointer;border:2px solid rgba(200,155,110,0.3);transition:0.3s;">
                         <span id="user-initial">U</span>
                     </div>
                 </div>
             </div>
-
         </nav>
     </div>
 
-    <h2>Our Premium Collections</h2>
+    <!-- HERO VIDEO -->
+    <section class="cs-hero">
+        <div class="cs-hero-video-wrap">
+            <video src="./media/furni.mp4" autoplay loop muted playsinline class="cs-hero-video"></video>
+            <div class="cs-hero-overlay"></div>
+        </div>
+        <div class="cs-hero-content">
+            <p class="cs-eyebrow" data-aos="fade-down" data-aos-duration="700">Karachi, Pakistan &mdash; Est. 1998</p>
+            <h1 data-aos="fade-up" data-aos-duration="900" data-aos-delay="100">
+                Craft Your<br><em>Perfect Space</em>
+            </h1>
+            <p class="cs-hero-sub" data-aos="fade-up" data-aos-duration="800" data-aos-delay="220">
+                Every chair ergonomically verified, personally approved,<br>and built to outlast trends.
+            </p>
+            <div class="cs-hero-btns" data-aos="fade-up" data-aos-duration="700" data-aos-delay="340">
+                <a href="#collection" class="cs-btn-primary">Browse Collection &#8594;</a>
+                <a href="./aboutus.html" class="cs-btn-ghost">Our Story</a>
+            </div>
+        </div>
+        <div class="cs-hero-scroll">
+            <span>Scroll</span>
+            <div class="cs-scroll-line"></div>
+        </div>
+        <div class="cs-hero-badge cs-badge-left" data-aos="fade-right" data-aos-delay="600">
+            <span class="cs-badge-num">140k+</span>
+            <span class="cs-badge-label">Happy Customers</span>
+        </div>
+        <div class="cs-hero-badge cs-badge-right" data-aos="fade-left" data-aos-delay="700">
+            <span class="cs-badge-num">15yr</span>
+            <span class="cs-badge-label">Max Warranty</span>
+        </div>
+    </section>
 
-    <div class="controls">
-        <input type="text" id="searchField" placeholder="Search for a chair..." onkeyup="runFilters()">
-        <div class="filter-buttons" id="btnContainer">
-            <button class="btn active" onclick="setCategory('all', this)">All Brands</button>
-            <button class="btn" onclick="setCategory('leo', this)">Leo</button>
-            <button class="btn" onclick="setCategory('herman-miller', this)">Herman Miller</button>
-            <button class="btn" onclick="setCategory('steelcase', this)">Steelcase</button>
-            <button class="btn" onclick="setCategory('haworth', this)">Haworth</button>
-            <button class="btn" onclick="setCategory('humanscale', this)">Humanscale</button>
+    <!-- MARQUEE -->
+    <div class="cs-marquee">
+        <div class="cs-marquee-track">
+            <span>Herman Miller &nbsp;&bull;&nbsp;</span>
+            <span>Steelcase &nbsp;&bull;&nbsp;</span>
+            <span>Haworth &nbsp;&bull;&nbsp;</span>
+            <span>Humanscale &nbsp;&bull;&nbsp;</span>
+            <span>Leo Series &nbsp;&bull;&nbsp;</span>
+            <span>Premium Ergonomics &nbsp;&bull;&nbsp;</span>
+            <span>Built to Last &nbsp;&bull;&nbsp;</span>
+            <span>Herman Miller &nbsp;&bull;&nbsp;</span>
+            <span>Steelcase &nbsp;&bull;&nbsp;</span>
+            <span>Haworth &nbsp;&bull;&nbsp;</span>
+            <span>Humanscale &nbsp;&bull;&nbsp;</span>
+            <span>Leo Series &nbsp;&bull;&nbsp;</span>
+            <span>Premium Ergonomics &nbsp;&bull;&nbsp;</span>
+            <span>Built to Last &nbsp;&bull;&nbsp;</span>
         </div>
     </div>
 
-    <div class="product-grid" id="productGrid">
-    </div>
+    <!-- BRAND PILLS -->
+    <section class="cs-brands-section" data-aos="fade-up" data-aos-duration="700">
+        <div class="cs-brands-inner">
+            <span class="cs-section-tag" style="text-align:center;display:block;margin-bottom:14px;">Trusted names.
+                Uncompromised quality.</span>
+            <div class="cs-brands-grid">
+                <div class="cs-brand-pill" data-aos="zoom-in" data-aos-delay="0">Herman Miller</div>
+                <div class="cs-brand-pill" data-aos="zoom-in" data-aos-delay="60">Steelcase</div>
+                <div class="cs-brand-pill" data-aos="zoom-in" data-aos-delay="120">Haworth</div>
+                <div class="cs-brand-pill" data-aos="zoom-in" data-aos-delay="180">Humanscale</div>
+                <div class="cs-brand-pill" data-aos="zoom-in" data-aos-delay="240">Leo</div>
+            </div>
+        </div>
+    </section>
 
-    <div id="comparisonBar" class="comparison-bar">
-        <span id="comparisonCount">0 chairs selected for comparison</span>
-        <button class="view-btn" onclick="goToComparisonPage()">View Comparison</button>
-    </div>
+    <!-- SEARCH FILTER -->
+    <section class="cs-controls-section" id="collection">
+        <div class="cs-controls-inner">
+            <div class="cs-controls-header" data-aos="fade-up" data-aos-duration="700">
+                <span class="cs-section-tag">Browse &mdash; Filter by Brand</span>
+                <h2>Our Premium <em>Collections</em></h2>
+                <p>Handpicked by our ergonomics team — every chair tested and approved.</p>
+            </div>
+            <div class="cs-controls" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
+                <div class="cs-search-wrap">
+                    <i class="fas fa-search cs-search-icon"></i>
+                    <input type="text" id="searchField" placeholder="Search chairs, brands, models..."
+                        onkeyup="runFilters()">
+                </div>
+                <div class="cs-filter-pills" id="btnContainer">
+                    <button class="cs-pill active" onclick="setCategory('all', this)">All</button>
+                    <button class="cs-pill" onclick="setCategory('leo', this)">Leo</button>
+                    <button class="cs-pill" onclick="setCategory('herman-miller', this)">Herman Miller</button>
+                    <button class="cs-pill" onclick="setCategory('steelcase', this)">Steelcase</button>
+                    <button class="cs-pill" onclick="setCategory('haworth', this)">Haworth</button>
+                    <button class="cs-pill" onclick="setCategory('humanscale', this)">Humanscale</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Footer -->
+    <!-- PRODUCT GRID -->
+    <section class="cs-grid-section">
+        <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <!-- WHY RICHFIELD -->
+    <section class="cs-why-section">
+        <div class="cs-why-inner">
+            <div class="cs-why-text" data-aos="fade-right" data-aos-duration="800">
+                <span class="cs-section-tag">Why Us</span>
+                <h2>Not just a chair.<br><em>An investment.</em></h2>
+                <p>We don't list what's popular — we list what's right. Every brand, every model, every stitch reviewed
+                    by people who sit in chairs for a living.</p>
+                <a href="./aboutus.html" class="cs-btn-outline">Our Full Story &#8594;</a>
+            </div>
+            <div class="cs-pillars" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100">
+                <div class="cs-pillar">
+                    <div class="cs-pillar-icon"><i class="fas fa-gem"></i></div>
+                    <div>
+                        <h4>Premium Materials</h4>
+                        <p>Top-grain leathers, sustainably sourced hardwoods, aircraft-grade alloys.</p>
+                    </div>
+                </div>
+                <div class="cs-pillar">
+                    <div class="cs-pillar-icon"><i class="fas fa-brain"></i></div>
+                    <div>
+                        <h4>Ergonomic Science</h4>
+                        <p>Orthopedic-tested designs that support your posture for the long haul.</p>
+                    </div>
+                </div>
+                <div class="cs-pillar">
+                    <div class="cs-pillar-icon"><i class="fas fa-truck"></i></div>
+                    <div>
+                        <h4>White-Glove Delivery</h4>
+                        <p>Delivered and set up across Pakistan with zero assembly stress.</p>
+                    </div>
+                </div>
+                <div class="cs-pillar">
+                    <div class="cs-pillar-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div>
+                        <h4>Up to 15-Year Warranty</h4>
+                        <p>Full manufacturer warranty honoured on every purchase.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cs-cta" data-aos="fade-up" data-aos-duration="800">
+        <div class="cs-cta-inner">
+            <span class="cs-section-tag" style="text-align:center;display:block;">Get in Touch</span>
+            <h2>Can't find what<br><em>you're looking for?</em></h2>
+            <p>Our specialists can source any chair globally. Tell us what you need and we'll make it happen.</p>
+            <a href="./contact.html" class="cs-btn-primary">Talk to a Specialist &#8594;</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="footer-grid">
             <div class="footer-col">
-                <a href="#" class="logo">RICHFIELD.</a>
+                <a href="./index.html" class="logo">RICHFIELD.</a>
                 <p style="margin-top:20px;color:rgba(255,255,255,0.35);font-size:0.85rem;line-height:1.7;">Premium
                     artisan furniture designed for the modern home. Proudly serving Pakistan since 1998.</p>
             </div>
@@ -93,8 +226,21 @@
         <div class="footer-bottom">&copy; 2026 Richfield. All Rights Reserved. &mdash; Karachi, Pakistan</div>
     </footer>
 
+    <!-- Comparison Bar -->
+    <div id="comparisonBar" class="comparison-bar">
+        <div class="comparison-left">
+            <i class="fas fa-balance-scale"></i>
+            <span id="comparisonCount">0 chairs selected</span>
+        </div>
+        <button class="cs-compare-btn" onclick="goToComparisonPage()">Compare Now &rarr;</button>
+    </div>
+
+    <!-- Toast -->
+    <div class="bag-toast" id="bagToast"></div>
+
     <script src="./js/cardSearch.js"></script>
     <script src="./js/nav-foot.js"></script>
+    <script>AOS.init({ duration: 800, once: true, offset: 50 });</script>
 </body>
 
 </html>

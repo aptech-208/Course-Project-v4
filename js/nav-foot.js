@@ -1,99 +1,185 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. DYNAMIC ISLAND SCROLL LOGIC
+
     const island = document.querySelector('#islandContainer');
 
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 60) {
-            island.classList.add('scrolled');
-        } else {
-            island.classList.remove('scrolled');
-        }
-    });
+        island.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
 
-    // 2. REVEAL ANIMATIONS
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('reveal');
-            }
-        });
-    }, { threshold: 0.2 });
 
-    document.querySelectorAll('section').forEach(section => observer.observe(section));
 
-    // 3. SMOOTH SCROLLING
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-
-            if (targetElement) {
-                const offset = 100;
-                const bodyRect = document.body.getBoundingClientRect().top;
-                const elementRect = targetElement.getBoundingClientRect().top;
-                const elementPosition = elementRect - bodyRect;
-                const offsetPosition = elementPosition - offset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-});
-
-// RESPONSIVE NAVBAR SCROLL LOGIC
-document.addEventListener('DOMContentLoaded', () => {
     const mobileToggle = document.getElementById('mobileToggle');
-    const navLinks = document.getElementById('navLinks');
+    const navLinks = document.querySelector('.nav-links');
+    const authBtns = document.getElementById('auth-btns');
+    const userProfile = document.getElementById('user-profile');
+
+    const drawer = document.createElement('div');
+    drawer.id = 'mobile-drawer';
+
+    const drawerHeader = document.createElement('div');
+    drawerHeader.className = 'drawer-header';
+
+    const drawerLogo = document.createElement('span');
+    drawerLogo.className = 'drawer-logo';
+    drawerLogo.textContent = 'RICHFIELD.';
+
+    const closeBtn = document.createElement('button');
+    closeBtn.className = 'drawer-close';
+    closeBtn.setAttribute('aria-label', 'Close menu');
+    closeBtn.innerHTML = '&times;';
+
+    drawerHeader.appendChild(drawerLogo);
+    drawerHeader.appendChild(closeBtn);
+    drawer.appendChild(drawerHeader);
+
+    const links = [
+        { label: 'Home', href: './index.html' },
+        { label: 'Furniture', href: './cardSearch.html' },
+        { label: 'About Us', href: './aboutus.html' },
+        { label: 'Contact', href: './contact.html' },
+    ];
+
+    const drawerNav = document.createElement('nav');
+    drawerNav.className = 'drawer-nav';
+
+    links.forEach(({ label, href }) => {
+        const a = document.createElement('a');
+        a.href = href;
+        a.textContent = label;
+        a.addEventListener('click', closeDrawer);
+        drawerNav.appendChild(a);
+    });
+
+    drawer.appendChild(drawerNav);
+
+    const divider = document.createElement('div');
+    divider.className = 'drawer-divider';
+    drawer.appendChild(divider);
+
+    const drawerAuth = document.createElement('div');
+    drawerAuth.className = 'drawer-auth';
+    drawer.appendChild(drawerAuth);
+
+    const backdrop = document.createElement('div');
+    backdrop.id = 'drawer-backdrop';
+
+    document.body.appendChild(backdrop);
+    document.body.appendChild(drawer);
+
+    function openDrawer() {
+        renderDrawerAuth();
+        drawer.classList.add('open');
+        backdrop.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        mobileToggle.classList.add('active');
+    }
+
+    function closeDrawer() {
+        drawer.classList.remove('open');
+        backdrop.classList.remove('open');
+        document.body.style.overflow = '';
+        mobileToggle.classList.remove('active');
+    }
+
+    function renderDrawerAuth() {
+        drawerAuth.innerHTML = '';
+
+        const loggedInUser = JSON.parse(localStorage.getItem('currentUser'));
+
+        if (loggedInUser) {
+            const profileCard = document.createElement('div');
+            profileCard.className = 'drawer-profile-card';
+
+            const greeting = document.createElement('span');
+            greeting.className = 'drawer-greeting';
+            greeting.textContent = `Hello, ${ loggedInUser.name.split(' ')[0] }`;
+
+            const avatar = document.createElement('div');
+            avatar.className = 'drawer-avatar';
+            avatar.textContent = loggedInUser.name.charAt(0).toUpperCase();
+            avatar.title = 'Tap to log out';
+            avatar.addEventListener('click', () => {
+                if (confirm('Do you want to log out?')) {
+                    localStorage.removeItem('currentUser');
+                    window.location.reload();
+                }
+            });
+
+            profileCard.appendChild(greeting);
+            profileCard.appendChild(avatar);
+            drawerAuth.appendChild(profileCard);
+        } else {
+            const loginBtn = document.createElement('a');
+            loginBtn.href = './login.html';
+            loginBtn.className = 'drawer-btn-ghost';
+            loginBtn.textContent = 'Log In';
+            loginBtn.addEventListener('click', closeDrawer);
+
+            const signupBtn = document.createElement('a');
+            signupBtn.href = './signup.html';
+            signupBtn.className = 'drawer-btn-primary';
+            signupBtn.innerHTML = 'Sign Up &rarr;';
+            signupBtn.addEventListener('click', closeDrawer);
+
+            drawerAuth.appendChild(loginBtn);
+            drawerAuth.appendChild(signupBtn);
+        }
+    }
 
     if (mobileToggle) {
         mobileToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileToggle.classList.toggle('active');
+            drawer.classList.contains('open') ? closeDrawer() : openDrawer();
         });
     }
 
-    // Close menu when clicking a link
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            mobileToggle.classList.remove('active');
-        });
+    closeBtn.addEventListener('click', closeDrawer);
+    backdrop.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeDrawer();
     });
-});
 
-// SIGN AND LOGIN 
-document.addEventListener('DOMContentLoaded', function () {
-    const authBtns = document.getElementById('auth-btns');
-    const userProfile = document.getElementById('user-profile');
+
     const userGreeting = document.getElementById('user-greeting');
     const userInitial = document.getElementById('user-initial');
+    const logoutTrigger = document.getElementById('logout-trigger');
 
-    // 1. Check if a user is stored in localStorage from your login logic
-    // Note: You should update your login.html to save 'currentUser' upon success
     const loggedInUser = JSON.parse(localStorage.getItem('currentUser'));
 
     if (loggedInUser) {
-        // Hide Login/Signup
-        authBtns.style.display = 'none';
-
-        // Show Profile Icon
-        userProfile.style.display = 'flex';
-
-        // Set Greeting and Initial (e.g., "John" -> "J")
-        userGreeting.textContent = `Hello, ${ loggedInUser.name.split(' ')[0] }`;
-        userInitial.textContent = loggedInUser.name.charAt(0).toUpperCase();
+        if (authBtns) authBtns.style.display = 'none';
+        if (userProfile) userProfile.style.display = 'flex';
+        if (userGreeting) userGreeting.textContent = `Hello, ${ loggedInUser.name.split(' ')[0] }`;
+        if (userInitial) userInitial.textContent = loggedInUser.name.charAt(0).toUpperCase();
     }
 
-    // 2. Logout Functionality (Click the circle to logout)
-    document.getElementById('logout-trigger').addEventListener('click', () => {
-        if (confirm("Do you want to log out?")) {
-            localStorage.removeItem('currentUser');
-            window.location.reload();
-        }
+    if (logoutTrigger) {
+        logoutTrigger.addEventListener('click', () => {
+            if (confirm('Do you want to log out?')) {
+                localStorage.removeItem('currentUser');
+                window.location.reload();
+            }
+        });
+    }
+
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('reveal');
+        });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('section').forEach(s => revealObserver.observe(s));
+
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if (!target) return;
+            e.preventDefault();
+            const offset = 100;
+            const top = target.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({ top, behavior: 'smooth' });
+        });
     });
+
 });

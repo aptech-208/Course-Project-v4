@@ -1,261 +1,779 @@
 :root {
-    --accent: #ff7e71;
-    --bg: #000000;
-    --surface: #0a0a0a;
-    --border: #222222;
+    --accent: #c8966e;
+    --accent-light: #e8b98a;
+    --accent-dark: #a07850;
+    --bg: #080808;
+    --surface: #0e0e0e;
+    --surface2: #131313;
+    --border: rgba(255, 255, 255, 0.07);
+    --muted: rgba(255, 255, 255, 0.42);
+    --caramel: #c8966e;
+    --wood-dark: #1a1008;
+    --font-d: 'Cormorant Garamond', Georgia, serif;
+    --font-b: 'Jost', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    max-width: 100vw;
 }
 
 body {
-    background-color: var(--bg);
-    color: white;
-    font-family: 'Space Grotesk', sans-serif;
-    margin: 0;
-    padding: 60px 20px;
-    line-height: 1.5;
-}
-
-h2 {
-    text-align: center;
+    background: var(--bg);
+    color: #fff;
+    font-family: var(--font-b);
     font-weight: 300;
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-    letter-spacing: 2px;
+    line-height: 1.7;
 }
 
-
-.controls {
-    text-align: center;
-    margin-bottom: 60px;
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-d);
+    font-weight: 400;
 }
 
-#searchField {
-    padding: 15px 25px;
-    width: 100%;
-    max-width: 450px;
-    background: #111;
-    border: 1px solid var(--border);
-    color: white;
-    border-radius: 50px;
-    margin: 0 auto 25px auto;
-    display: block;
-    outline: none;
-    transition: 0.3s;
+em {
+    font-style: italic;
+    color: var(--accent);
 }
 
-#searchField:focus {
-    border-color: var(--accent);
-    box-shadow: 0 0 15px rgba(255, 126, 113, 0.2);
+a {
+    text-decoration: none;
 }
 
-.btn {
-    border: 1px solid var(--border);
-    background: transparent;
-    color: #888;
-    padding: 10px 22px;
-    cursor: pointer;
-    margin: 5px;
-    transition: 0.3s;
-    font-size: 11px;
+.cs-section-tag {
+    font-family: var(--font-b);
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 4px;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 14px;
 }
 
-.btn:hover,
-.btn.active {
-    background: var(--accent);
-    color: black;
-    border-color: var(--accent);
-}
-
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-    justify-items: center;
-}
-
-
-.card-container {
+.cs-hero {
     position: relative;
-    width: 320px;
-    height: 520px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    overflow: hidden;
-    transition: 0.4s ease;
+    height: 100vh;
+    min-height: 600px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-}
-
-.card-container:hover {
-    border-color: #444;
-}
-
-.info-header,
-.footer {
-    position: relative;
-    z-index: 2;
-    
-    background: transparent;
-    
-}
-
-
-.footer {
-    padding: 25px;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-}
-
-.category {
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--accent);
-    font-weight: 700;
-}
-
-.model-no {
-    font-size: 10px;
-    color: #444;
-}
-
-
-.image-box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    
-    display: flex;
-    justify-content: center;
     align-items: center;
-    transition: 0.5s ease;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    mask-image: linear-gradient(to bottom, black 0%, black 82%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 82%, transparent 100%);
 }
 
-.image-box img {
+.cs-hero-video-wrap {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.cs-hero-video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    
-    opacity: 0.4;
-    
-    transition: 0.6s transform ease, 0.6s opacity ease;
 }
 
-
-.card-container:hover .image-box img {
-    opacity: 0.8;
-    transform: scale(1.1);
-}
-
-.footer {
+.cs-hero-overlay {
     position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 25px;
-    box-sizing: border-box;
-    background: var(--surface);
+    inset: 0;
+    background: linear-gradient(170deg,
+            rgba(0, 0, 0, 0.88) 0%,
+            rgba(0, 0, 0, 0.52) 50%,
+            rgba(0, 0, 0, 0.90) 100%);
 }
 
-.product-title {
-    font-size: 1.5rem;
-    margin: 0;
-    font-weight: 500;
-    color: white;
+.cs-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
 }
 
-.price {
-    color: #888;
-    font-size: 1.1rem;
-    display: block;
-    margin-top: 8px;
-}
-
-.action-bar {
-    height: 0;
-    opacity: 0;
-    display: flex;
-    gap: 1px;
-    background: var(--border);
-    margin-top: 0;
-    transition: 0.4s ease;
-}
-
-.card-container:hover .action-bar {
-    height: 45px;
-    opacity: 1;
-    margin-top: 20px;
-}
-
-.action-btn {
-    flex: 1;
-    background: #151515;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 10px;
+.cs-eyebrow {
+    font-size: 0.66rem;
+    letter-spacing: 4px;
     text-transform: uppercase;
-    text-decoration: none;
+    color: var(--accent);
+    font-family: var(--font-b);
+    margin-bottom: 22px;
+}
+
+.cs-hero-content h1 {
+    font-family: var(--font-d);
+    font-size: clamp(3.2rem, 7.5vw, 6.5rem);
+    font-weight: 300;
+    line-height: 1.06;
+    letter-spacing: -1px;
+    margin-bottom: 22px;
+}
+
+.cs-hero-content h1 em {
+    display: block;
+    color: var(--accent-light);
+}
+
+.cs-hero-sub {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.48);
+    max-width: 480px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+}
+
+.cs-hero-btns {
     display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.cs-btn-primary {
+    background: var(--accent);
+    color: #1a0e08;
+    font-family: var(--font-b);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.cs-btn-primary:hover {
+    background: var(--accent-light);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(200, 150, 110, 0.28);
+}
+
+.cs-btn-ghost {
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    color: rgba(255, 255, 255, 0.7);
+    font-family: var(--font-b);
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.cs-btn-ghost:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+
+.cs-btn-outline {
+    display: inline-flex;
     align-items: center;
+    gap: 10px;
+    border: 1px solid rgba(200, 150, 110, 0.4);
+    color: var(--accent);
+    font-family: var(--font-b);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px 28px;
+    transition: 0.3s;
+}
+
+.cs-btn-outline:hover {
+    background: var(--accent);
+    color: #1a0e08;
+    border-color: var(--accent);
+}
+
+.cs-hero-scroll {
+    position: absolute;
+    bottom: 38px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    z-index: 2;
+    font-size: 0.58rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: var(--font-b);
+}
+
+.cs-scroll-line {
+    width: 1px;
+    height: 42px;
+    background: linear-gradient(to bottom, var(--accent), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+
+    0%,
+    100% {
+        opacity: .4
+    }
+
+    50% {
+        opacity: 1
+    }
+}
+
+
+.cs-hero-badge {
+    position: absolute;
+    bottom: 80px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 18px 24px;
+    background: rgba(14, 14, 14, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cs-badge-left {
+    left: 60px;
+}
+
+.cs-badge-right {
+    right: 60px;
+}
+
+.cs-badge-num {
+    font-family: var(--font-d);
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--accent);
+    line-height: 1;
+}
+
+.cs-badge-label {
+    font-family: var(--font-b);
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+
+.cs-marquee {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+    padding: 15px 0;
+}
+
+.cs-marquee-track {
+    display: flex;
+    white-space: nowrap;
+    animation: marqueeScroll 28s linear infinite;
+    font-family: var(--font-d);
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+}
+
+.cs-marquee-track span {
+    padding: 0 10px;
+}
+
+@keyframes marqueeScroll {
+    from {
+        transform: translateX(0)
+    }
+
+    to {
+        transform: translateX(-50%)
+    }
+}
+
+
+.cs-brands-section {
+    background: var(--bg);
+    padding: 80px 40px;
+    border-bottom: 1px solid var(--border);
+}
+
+.cs-brands-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.cs-brands-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
     justify-content: center;
 }
 
-.action-btn:hover {
-    background: var(--accent);
-    color: black;
+.cs-brand-pill {
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-family: var(--font-b);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 12px 28px;
+    transition: 0.3s;
+    cursor: default;
 }
 
-.accent-bar {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 3px;
-    background: var(--accent);
-    transition: 0.6s ease;
+.cs-brand-pill:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(200, 150, 110, 0.04);
 }
 
-.card-container:hover .accent-bar {
+
+.cs-controls-section {
+    background: var(--surface2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 90px 60px 70px;
+}
+
+.cs-controls-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.cs-controls-header {
+    text-align: center;
+    margin-bottom: 52px;
+}
+
+.cs-controls-header h2 {
+    font-size: clamp(2rem, 3.8vw, 3.2rem);
+    margin-bottom: 14px;
+}
+
+.cs-controls-header p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.cs-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+
+.cs-search-wrap {
+    position: relative;
     width: 100%;
+    max-width: 540px;
+}
+
+.cs-search-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 0.82rem;
+    pointer-events: none;
+}
+
+#searchField {
+    width: 100%;
+    padding: 15px 20px 15px 48px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: #fff;
+    border-radius: 0;
+    outline: none;
+    font-family: var(--font-b);
+    font-size: 0.88rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#searchField::placeholder {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+#searchField:focus {
+    border-color: rgba(200, 150, 110, 0.5);
+    box-shadow: 0 0 0 1px rgba(200, 150, 110, 0.15);
+}
+
+
+.cs-filter-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+.cs-pill {
+    font-family: var(--font-b);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: transparent;
+    border: 1px solid var(--border);
+    padding: 10px 22px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.cs-pill:hover {
+    border-color: rgba(200, 150, 110, 0.4);
+    color: var(--accent);
+}
+
+.cs-pill.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--wood-dark);
+    font-weight: 600;
+}
+
+
+.cs-grid-section {
+    background: var(--bg);
+    padding: 80px 60px 100px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    max-width: 1160px;
+    margin: 0 auto;
+}
+
+
+.card {
+    background: var(--surface);
+    position: relative;
+    overflow: hidden;
+    transition: background 0.35s;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    background: #111;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
 }
 
 
 .comparison-checkbox {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 14px;
+    right: 14px;
     z-index: 10;
 }
 
 .comparison-checkbox input {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     cursor: pointer;
     accent-color: var(--accent);
+    opacity: 0.4;
+    transition: opacity 0.2s;
 }
+
+.card:hover .comparison-checkbox input {
+    opacity: 1;
+}
+
+
+.info-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 24px 14px;
+}
+
+.category {
+    font-family: var(--font-b);
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.model-no {
+    font-family: var(--font-b);
+    font-size: 0.6rem;
+    color: #333;
+    letter-spacing: 1px;
+}
+
+
+.image-box {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.image-box img {
+    max-height: 100%;
+    max-width: 70%;
+    object-fit: contain;
+    transition: transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.card:hover .image-box img {
+    transform: scale(1.1) translateY(-8px);
+}
+
+
+.footer {
+    padding: 20px 24px 28px;
+    flex: 1;
+    background: transparent;
+    position: relative;
+}
+
+.product-title {
+    font-family: var(--font-d);
+    font-size: 1.45rem;
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 8px;
+}
+
+.price-row {
+    margin-top: 8px;
+}
+
+.price {
+    font-family: var(--font-b);
+    font-size: 0.95rem;
+    color: #555;
+    display: block;
+}
+
+
+.action-bar {
+    display: flex;
+    gap: 1px;
+    background: var(--border);
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: height 0.4s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.3s, margin 0.4s;
+    margin-top: 0;
+}
+
+.card:hover .action-bar {
+    height: 42px;
+    opacity: 1;
+    margin-top: 18px;
+}
+
+.action-btn {
+    flex: 1;
+    background: #151515;
+    color: rgba(255, 255, 255, 0.8);
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-b);
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s, color 0.3s;
+    height: 100%;
+}
+
+.action-btn:hover {
+    background: var(--accent);
+    color: var(--wood-dark);
+    font-weight: 700;
+}
+
+
+.accent-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent);
+    transition: width 0.6s ease;
+}
+
+.card:hover .accent-bar {
+    width: 100%;
+}
+
+
+.cs-why-section {
+    background: var(--surface2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 110px 60px;
+}
+
+.cs-why-inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.cs-why-text h2 {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    margin-bottom: 22px;
+}
+
+.cs-why-text p {
+    color: var(--muted);
+    font-size: 0.92rem;
+    margin-bottom: 34px;
+    max-width: 400px;
+    line-height: 1.75;
+}
+
+.cs-pillars {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.cs-pillar {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 22px 24px;
+    background: rgba(255, 255, 255, 0.015);
+    border: 1px solid var(--border);
+    transition: 0.3s;
+}
+
+.cs-pillar:hover {
+    border-color: rgba(200, 150, 110, 0.22);
+    background: rgba(200, 150, 110, 0.03);
+}
+
+.cs-pillar-icon {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.cs-pillar h4 {
+    font-family: var(--font-d);
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.cs-pillar p {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+
+.cs-cta {
+    background: var(--bg);
+    padding: 110px 60px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.cs-cta-inner {
+    text-align: center;
+    max-width: 600px;
+}
+
+.cs-cta-inner h2 {
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.cs-cta-inner p {
+    color: var(--muted);
+    font-size: 0.92rem;
+    margin-bottom: 40px;
+    line-height: 1.7;
+}
+
 
 .comparison-bar {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    background: #111;
-    padding: 20px 50px;
+    background: rgba(14, 14, 14, 0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(200, 150, 110, 0.35);
+    padding: 18px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 2px solid var(--accent);
     transform: translateY(100%);
-    transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-    z-index: 1000;
+    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    z-index: 800;
     box-sizing: border-box;
 }
 
@@ -263,63 +781,75 @@ h2 {
     transform: translateY(0);
 }
 
-.view-btn {
-    background: var(--accent);
-    color: black;
-    border: none;
-    padding: 12px 30px;
-    text-transform: uppercase;
-    font-size: 12px;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-#comparisonCount {
-    font-size: 14px;
+.comparison-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--muted);
+    font-family: var(--font-b);
+    font-size: 0.82rem;
     letter-spacing: 1px;
 }
 
-body {
-    padding-bottom: 120px;
+.comparison-left i {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.cs-compare-btn {
+    font-family: var(--font-b);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--wood-dark);
+    background: var(--accent);
+    border: none;
+    padding: 12px 30px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.15s;
+}
+
+.cs-compare-btn:hover {
+    background: var(--accent-light);
+    transform: translateY(-1px);
 }
 
 
-#bagToast {
+.bag-toast {
     position: fixed;
-    top: 30px;
-    right: 30px;
+    top: 28px;
+    right: 28px;
     background: #111;
     border: 1px solid var(--accent);
-    color: white;
-    padding: 18px 20px;
+    color: #fff;
+    padding: 16px 18px;
     display: flex;
     align-items: center;
     gap: 14px;
     z-index: 9999;
-    border-radius: 6px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-    min-width: 260px;
-    transform: translateX(120%);
+    min-width: 250px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.55);
+    transform: translateX(130%);
     opacity: 0;
-    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.4s ease;
+    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.4s;
 }
 
-#bagToast.toast-show {
+.bag-toast.toast-show {
     transform: translateX(0);
     opacity: 1;
 }
 
 .toast-icon {
-    width: 34px;
-    height: 34px;
+    width: 32px;
+    height: 32px;
     background: var(--accent);
-    color: black;
+    color: var(--wood-dark);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: bold;
     flex-shrink: 0;
 }
@@ -327,42 +857,335 @@ body {
 .toast-text {
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    gap: 2px;
     flex: 1;
 }
 
 .toast-title {
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 1px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
     color: var(--accent);
 }
 
 .toast-sub {
-    font-size: 12px;
-    color: #aaa;
+    font-size: 11px;
+    color: #999;
 }
 
 .toast-close {
     background: none;
     border: none;
-    color: #555;
+    color: #444;
     cursor: pointer;
-    font-size: 14px;
-    padding: 0;
-    line-height: 1;
+    font-size: 16px;
     transition: color 0.2s;
 }
 
 .toast-close:hover {
-    color: white;
+    color: #fff;
 }
 
 
+@media (max-width: 1280px) {
+    .cs-hero-content h1 {
+        font-size: clamp(3rem, 6vw, 5.5rem);
+    }
+
+    .cs-badge-left {
+        left: 40px;
+    }
+
+    .cs-badge-right {
+        right: 40px;
+    }
+
+    .cs-controls-section {
+        padding: 80px 40px 60px;
+    }
+
+    .cs-grid-section {
+        padding: 70px 40px 90px;
+    }
+
+    .cs-why-section {
+        padding: 90px 40px;
+    }
+
+    .cs-cta {
+        padding: 90px 40px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        max-width: 740px;
+    }
+
+    .cs-why-inner {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
+    }
+
+    .cs-why-text p {
+        max-width: 100%;
+    }
+
+    .cs-pillars {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .cs-brands-section {
+        padding: 70px 40px;
+    }
+}
 
 
+@media (max-width: 768px) {
 
 
+    .cs-hero {
+        min-height: 100vh;
+        padding: 0 20px;
+    }
+
+    .cs-hero-content h1 {
+        font-size: clamp(2rem, 9.5vw, 2.8rem);
+    }
+
+    .cs-hero-sub {
+        font-size: 0.88rem;
+        max-width: 100%;
+    }
+
+    .cs-hero-btns {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        max-width: 290px;
+        margin: 0 auto;
+    }
+
+    .cs-btn-primary,
+    .cs-btn-ghost {
+        width: 100%;
+        text-align: center;
+        padding: 14px 24px;
+        font-size: 0.7rem;
+    }
+
+    .cs-hero-scroll {
+        bottom: 24px;
+        font-size: 0.54rem;
+    }
+
+    .cs-scroll-line {
+        height: 30px;
+    }
 
 
+    .cs-hero-badge {
+        display: none;
+    }
+
+
+    .cs-marquee-track {
+        font-size: 0.85rem;
+    }
+
+
+    .cs-brands-section {
+        padding: 55px 20px;
+    }
+
+    .cs-brand-pill {
+        font-size: 0.63rem;
+        letter-spacing: 2.5px;
+        padding: 10px 20px;
+    }
+
+
+    .cs-controls-section {
+        padding: 60px 20px 44px;
+    }
+
+    .cs-controls-header h2 {
+        font-size: clamp(1.7rem, 7.5vw, 2.2rem);
+    }
+
+    .cs-controls-header p {
+        font-size: 0.86rem;
+    }
+
+    #searchField {
+        font-size: 0.85rem;
+        padding: 14px 16px 14px 44px;
+    }
+
+    .cs-pill {
+        font-size: 0.62rem;
+        letter-spacing: 2px;
+        padding: 9px 16px;
+    }
+
+
+    .cs-grid-section {
+        padding: 50px 20px 80px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr !important;
+        max-width: 400px !important;
+        background: transparent !important;
+        border: none !important;
+        gap: 2px !important;
+    }
+
+    .card {
+        border: 1px solid var(--border);
+    }
+
+    .image-box {
+        height: 190px;
+    }
+
+    .product-title {
+        font-size: 1.3rem;
+    }
+
+    .price {
+        font-size: 0.9rem;
+    }
+
+    .card:hover .action-bar {
+        height: 40px;
+        margin-top: 14px;
+    }
+
+    .action-btn {
+        font-size: 0.6rem;
+    }
+
+
+    .cs-why-section {
+        padding: 65px 20px !important;
+    }
+
+    .cs-why-inner {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 44px !important;
+        text-align: center !important;
+    }
+
+    .cs-why-text h2 {
+        font-size: clamp(1.7rem, 7.5vw, 2.1rem) !important;
+    }
+
+    .cs-why-text p {
+        max-width: 100% !important;
+        font-size: 0.88rem !important;
+    }
+
+    .cs-pillar {
+        padding: 18px 20px !important;
+    }
+
+    .cs-pillar-icon {
+        width: 34px !important;
+        height: 34px !important;
+    }
+
+    .cs-pillar h4 {
+        font-size: 1rem !important;
+    }
+
+    .cs-pillar p {
+        font-size: 0.8rem !important;
+    }
+
+
+    .cs-cta {
+        padding: 80px 20px;
+    }
+
+    .cs-cta-inner h2 {
+        font-size: clamp(1.8rem, 8vw, 2.4rem);
+    }
+
+    .cs-cta-inner p {
+        font-size: 0.88rem;
+    }
+
+    .cs-btn-primary {
+        padding: 14px 30px;
+    }
+
+
+    .comparison-bar {
+        padding: 16px 20px;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .comparison-left {
+        font-size: 0.78rem;
+    }
+
+    .cs-compare-btn {
+        padding: 11px 22px;
+        font-size: 0.68rem;
+    }
+
+
+    .bag-toast {
+        top: 14px;
+        right: 14px;
+        left: 14px;
+        min-width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .cs-hero-content h1 {
+        font-size: clamp(1.85rem, 10vw, 2.4rem);
+    }
+
+    .cs-controls-section {
+        padding: 50px 14px 38px;
+    }
+
+    .cs-grid-section {
+        padding: 40px 14px 70px;
+    }
+
+    .product-grid {
+        max-width: 100% !important;
+    }
+
+    .cs-brands-section {
+        padding: 50px 14px;
+    }
+
+    .cs-brand-pill {
+        font-size: 0.6rem;
+        padding: 9px 16px;
+    }
+
+    .cs-why-section {
+        padding: 55px 14px !important;
+    }
+
+    .cs-cta {
+        padding: 70px 14px;
+    }
+
+    .cs-pill {
+        font-size: 0.6rem;
+        padding: 8px 14px;
+    }
+}

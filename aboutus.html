@@ -33,33 +33,51 @@
         <a href="./cardSearch.html" class="promo-btn">Shop Now &rarr;</a>
     </div>
 
-    <!-- Navbar -->
+    <!-- NAV -->
     <div class="nav-wrapper" id="islandContainer">
+
         <nav class="navbar">
+
             <div class="logo">RICHFIELD.</div>
+
+            <div class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
             <ul class="nav-links">
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="./cardSearch.html">Furniture</a></li>
                 <li><a href="./aboutus.html">About Us</a></li>
                 <li><a href="./contact.html">Contact</a></li>
             </ul>
+
             <div class="nav-actions">
+
                 <div id="auth-btns" style="display:flex;gap:12px;align-items:center;">
                     <a href="./login.html" class="btn-ghost">Log In</a>
                     <a href="./signup.html" class="btn-primary">Sign Up <span class="arrow-icon">&#8594;</span></a>
                 </div>
+
                 <div id="user-profile" style="display:none;align-items:center;gap:15px;">
+
                     <span id="user-greeting" style="color:#a89585;font-size:0.85rem;letter-spacing:0.05em;"></span>
+
                     <div class="profile-icon" id="logout-trigger"
                         style="width:40px;height:40px;background:var(--caramel);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#1a1008;font-weight:700;cursor:pointer;border:2px solid rgba(200,155,110,0.3);transition:0.3s;">
                         <span id="user-initial">U</span>
                     </div>
+
                 </div>
+
             </div>
+
         </nav>
+
     </div>
 
-    <!-- ===== HERO WITH VIDEO ===== -->
+    <!--  HERO WITH VIDEO  -->
     <section class="hero">
         <div class="hero-video-wrap">
             <video autoplay muted loop playsinline class="hero-video">
@@ -104,7 +122,7 @@
         </div>
     </section>
 
-    <!-- ===== MANIFESTO ===== -->
+    <!--  MANIFESTO  -->
     <section class="manifesto-section">
         <div class="container">
             <div class="manifesto-grid">
@@ -139,7 +157,7 @@
         </div>
     </section>
 
-    <!-- ===== STORY ===== -->
+    <!-- STORY -->
     <section class="story-section">
         <div class="container">
             <div class="story-grid">
@@ -181,7 +199,7 @@
         </div>
     </section>
 
-    <!-- ===== VALUES ===== -->
+    <!--  VALUES  -->
     <section class="values-section">
         <div class="container">
             <div class="section-header" data-aos="fade-up" data-aos-duration="800">
@@ -240,7 +258,7 @@
         </div>
     </section>
 
-    <!-- ===== PROCESS ===== -->
+    <!--  PROCESS  -->
     <section class="process-section">
         <div class="process-bg"></div>
         <div class="container">
@@ -284,7 +302,7 @@
         </div>
     </section>
 
-    <!-- ===== SUSTAINABILITY ===== -->
+    <!--  SUSTAINABILITY  -->
     <section class="sustain-section">
         <div class="container">
             <div class="sustain-grid">
@@ -317,7 +335,7 @@
         </div>
     </section>
 
-    <!-- ===== TEAM ===== -->
+    <!--  TEAM  -->
     <section class="team-section">
         <div class="container">
             <div class="section-header" data-aos="fade-up" data-aos-duration="800">
@@ -368,7 +386,7 @@
         </div>
     </section>
 
-    <!-- ===== CTA ===== -->
+    <!--  CTA  -->
     <section class="cta-section" data-aos="fade-up" data-aos-duration="1000">
         <div class="cta-inner">
             <p class="cta-tag">Ready to sit differently?</p>
@@ -378,7 +396,7 @@
         <div class="cta-bg-text">SIT</div>
     </section>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="footer-grid">
             <div class="footer-col">
@@ -437,7 +455,7 @@
             if (heroBg) heroBg.style.transform = `translateY(${ scrolled * 0.25 }px)`;
         });
 
-        // Countdown timer — 23 hours 59 min from now
+        // Countdown timer — 23 hours 59 min 
         function startCountdown() {
             let total = 23 * 3600 + 59 * 60;
             const hEl = document.getElementById('cd-h');
@@ -458,7 +476,7 @@
         }
         startCountdown();
 
-        // Show promo after 2s
+        // Promo after 2s
         setTimeout(() => {
             const promo = document.getElementById('promoFloat');
             if (promo) promo.classList.add('promo-visible');
