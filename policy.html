@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Richfield | Policies & Returns</title>
 
+    <link rel="stylesheet" href="./css/nav-foot.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&family=Playfair+Display:wght@400;600&display=swap"
         rel="stylesheet">
@@ -16,6 +17,51 @@
 
 <body>
 
+    <!-- Navbar -->
+    <div class="nav-wrapper" id="islandContainer">
+
+        <nav class="navbar">
+
+            <div class="logo">RICHFIELD.</div>
+
+            <div class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./cardSearch.html">Furniture</a></li>
+                <li><a href="./aboutus.html">About Us</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+
+                <div id="auth-btns" style="display:flex;gap:12px;align-items:center;">
+                    <a href="./login.html" class="btn-ghost">Log In</a>
+                    <a href="./signup.html" class="btn-primary">Sign Up <span class="arrow-icon">&#8594;</span></a>
+                </div>
+
+                <div id="user-profile" style="display:none;align-items:center;gap:15px;">
+
+                    <span id="user-greeting" style="color:#a89585;font-size:0.85rem;letter-spacing:0.05em;"></span>
+
+                    <div class="profile-icon" id="logout-trigger"
+                        style="width:40px;height:40px;background:var(--caramel);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#1a1008;font-weight:700;cursor:pointer;border:2px solid rgba(200,155,110,0.3);transition:0.3s;">
+                        <span id="user-initial">U</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </div>
+
+    <!-- Policy -->
     <section class="policy-header" data-aos="fade-up">
         <p style="letter-spacing: 3px; color: var(--caramel);">COMMITMENT TO EXCELLENCE</p>
         <h1>Richfield Policies</h1>
@@ -91,6 +137,7 @@
         <a href="contact.html" class="btn-richfield">Speak with Concierge</a>
     </footer>
 
+    <script src="./js/nav-foot.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({

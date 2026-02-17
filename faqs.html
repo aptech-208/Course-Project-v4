@@ -4,105 +4,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support | ChairCo Premium</title>
-    <link rel="stylesheet" href="./css/faqs.css">
-    <link rel="stylesheet" href="./css/nav-foot.css">
+    <title>FAQs | Richfield</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="./css/nav-foot.css">
+    <link rel="stylesheet" href="./css/faqs.css">
 </head>
 
 <body>
 
-    <!-- Navbar -->
+    <!-- NAVBAR -->
     <div class="nav-wrapper" id="islandContainer">
         <nav class="navbar">
             <div class="logo">RICHFIELD.</div>
-
+            <div class="mobile-toggle" id="mobileToggle">
+                <span></span><span></span><span></span>
+            </div>
             <ul class="nav-links">
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="./cardSearch.html">Furniture</a></li>
                 <li><a href="./aboutus.html">About Us</a></li>
                 <li><a href="./contact.html">Contact</a></li>
             </ul>
-
-            <div class="auth-buttons">
-                <a href="#" class="btn-login">Log In</a>
-                <a href="#" class="btn-signup">Sign Up</a>
-                <div class="mobile-btn" id="mobileMenu">☰</div>
+            <div class="nav-actions">
+                <div id="auth-btns" style="display:flex;gap:12px;align-items:center;">
+                    <a href="./login.html" class="btn-ghost">Log In</a>
+                    <a href="./signup.html" class="btn-primary">Sign Up <span class="arrow-icon">&#8594;</span></a>
+                </div>
+                <div id="user-profile" style="display:none;align-items:center;gap:15px;">
+                    <span id="user-greeting" style="color:#a89585;font-size:0.85rem;letter-spacing:0.05em;"></span>
+                    <div class="profile-icon" id="logout-trigger"
+                        style="width:40px;height:40px;background:var(--caramel);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#1a1008;font-weight:700;cursor:pointer;border:2px solid rgba(200,155,110,0.3);transition:0.3s;">
+                        <span id="user-initial">U</span>
+                    </div>
+                </div>
             </div>
         </nav>
     </div>
 
-    <!-- FAQS -->
-    <div class="faq-wrapper">
-        <div class="faq-header">
-            <p>Support Center</p>
-            <h1>Common Inquiries</h1>
+    <!-- HERO -->
+    <section class="faq-hero">
+        <div class="faq-hero-video-wrap">
+            <video src="./media/faq.mp4" autoplay loop muted playsinline class="faq-hero-video"></video>
+            <div class="faq-hero-overlay"></div>
         </div>
+        <div class="faq-hero-content">
+            <p class="faq-eyebrow" data-aos="fade-down" data-aos-duration="700">Support Center</p>
+            <h1 data-aos="fade-up" data-aos-duration="900" data-aos-delay="100">
+                Frequently Asked<br><em>Questions</em>
+            </h1>
+            <p class="faq-hero-sub" data-aos="fade-up" data-aos-duration="800" data-aos-delay="220">
+                Everything you need to know about our products, delivery,<br>warranty, and the Richfield experience.
+            </p>
+        </div>
+        <div class="faq-hero-scroll">
+            <span>Scroll</span>
+            <div class="faq-scroll-line"></div>
+        </div>
+    </section>
 
-        <div class="faq-container">
-            <div class="faq-item">
-                <input type="checkbox" id="faq-1">
-                <label class="faq-question" for="faq-1">
-                    What is the estimated delivery timeframe?
-                    <i class="fas fa-chevron-down"></i>
-                </label>
-                <div class="faq-answer">
-                    <p>Standard delivery within the continental PK typically arrives in 3-5 business days. Bespoke
-                        orders from the LEO or AURA collections may require up to 10 days for precision handling and
-                        white-glove setup.</p>
-                </div>
+    <!-- FAQ SECTION -->
+    <section class="faq-section">
+        <div class="faq-inner">
+            <div class="faq-header" data-aos="fade-up" data-aos-duration="700">
+                <span class="faq-section-tag">Common Inquiries</span>
+                <h2>Have questions?<br><em>We have answers.</em></h2>
+                <p>Find answers to the most commonly asked questions about our chairs, shipping, and policies.</p>
             </div>
 
-            <div class="faq-item">
-                <input type="checkbox" id="faq-2">
-                <label class="faq-question" for="faq-2">
-                    Are the chairs shipped pre-assembled?
-                    <i class="fas fa-chevron-down"></i>
-                </label>
-                <div class="faq-answer">
-                    <p>To ensure the structural integrity of our artisan components, chairs are shipped in reinforced
-                        modules. Our patented "Quick-Click" system allows for a complete, tool-free assembly in under 15
-                        minutes.</p>
+            <div class="faq-container">
+                <div class="faq-item" data-aos="fade-up" data-aos-duration="700" data-aos-delay="0">
+                    <input type="checkbox" id="faq-1">
+                    <label class="faq-question" for="faq-1">
+                        <span>What is the estimated delivery timeframe?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </label>
+                    <div class="faq-answer">
+                        <p>Standard delivery within Pakistan typically arrives in 3-5 business days. Bespoke orders from
+                            premium collections may require up to 10 days for precision handling and white-glove setup.
+                            We'll keep you informed every step of the way.</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="faq-item">
-                <input type="checkbox" id="faq-3">
-                <label class="faq-question" for="faq-3">
-                    Your 30-day "Comfort Guarantee" policy.
-                    <i class="fas fa-chevron-down"></i>
-                </label>
-                <div class="faq-answer">
-                    <p>We invite you to experience our seating in your own environment. If the ergonomic profile does
-                        not perfectly align with your needs within 30 days, we offer a seamless return process with
-                        complimentary pickup.</p>
+                <div class="faq-item" data-aos="fade-up" data-aos-duration="700" data-aos-delay="80">
+                    <input type="checkbox" id="faq-2">
+                    <label class="faq-question" for="faq-2">
+                        <span>Are the chairs shipped pre-assembled?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </label>
+                    <div class="faq-answer">
+                        <p>Most of our premium chairs arrive fully assembled or with minimal assembly required. Our team
+                            ensures every piece is ready to use out of the box. For complex models, we provide
+                            white-glove delivery and setup service.</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="faq-item">
-                <input type="checkbox" id="faq-4">
-                <label class="faq-question" for="faq-4">
-                    Warranty coverage on mechanical components.
-                    <i class="fas fa-chevron-down"></i>
-                </label>
-                <div class="faq-answer">
-                    <p>Every ChairCo product is backed by a 2-year limited warranty. This covers all precision
-                        mechanisms, including the gas lift, recline tensioners, and 4D adjustable armrests.</p>
+                <div class="faq-item" data-aos="fade-up" data-aos-duration="700" data-aos-delay="160">
+                    <input type="checkbox" id="faq-3">
+                    <label class="faq-question" for="faq-3">
+                        <span>What is your return policy?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </label>
+                    <div class="faq-answer">
+                        <p>We offer a 30-day comfort guarantee. If the chair doesn't meet your expectations within 30
+                            days, we provide a seamless return process with complimentary pickup. Your satisfaction is
+                            our priority.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-duration="700" data-aos-delay="240">
+                    <input type="checkbox" id="faq-4">
+                    <label class="faq-question" for="faq-4">
+                        <span>What warranty coverage is included?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </label>
+                    <div class="faq-answer">
+                        <p>Every Richfield product is backed by a manufacturer warranty ranging from 5 to 15 years
+                            depending on the brand and model. This covers all precision mechanisms including gas lifts,
+                            recline tensioners, and adjustable components. We honor all warranties fully.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-duration="700" data-aos-delay="320">
+                    <input type="checkbox" id="faq-5">
+                    <label class="faq-question" for="faq-5">
+                        <span>Do you offer customization options?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </label>
+                    <div class="faq-answer">
+                        <p>Absolutely. Many of our chairs offer customization in fabric, leather type, color, and
+                            finishing. Contact our specialists to discuss custom orders — we work directly with
+                            manufacturers to source exactly what you need.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-duration="700" data-aos-delay="400">
+                    <input type="checkbox" id="faq-6">
+                    <label class="faq-question" for="faq-6">
+                        <span>How do I maintain my chair?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </label>
+                    <div class="faq-answer">
+                        <p>Each chair comes with a detailed care guide specific to its materials. Generally: vacuum
+                            fabric regularly, wipe leather with a damp cloth, and lubricate mechanical parts annually.
+                            We also offer professional maintenance services.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-duration="700" data-aos-delay="480">
+                    <input type="checkbox" id="faq-7">
+                    <label class="faq-question" for="faq-7">
+                        <span>Can I test a chair before purchasing?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </label>
+                    <div class="faq-answer">
+                        <p>We highly encourage it. Visit our showroom in Karachi to try our chairs in person. Can't make
+                            it? Our 30-day comfort guarantee lets you test the chair in your own space with full peace
+                            of mind.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-duration="700" data-aos-delay="560">
+                    <input type="checkbox" id="faq-8">
+                    <label class="faq-question" for="faq-8">
+                        <span>What payment methods do you accept?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </label>
+                    <div class="faq-answer">
+                        <p>We accept bank transfers, credit/debit cards, and cash on delivery for orders within
+                            Pakistan. For international orders, we work with secure payment gateways. Financing options
+                            are available for select models.</p>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="faq-footer">
-            <p>Still require assistance with your selection?</p>
-            <div class="btn-group">
-                <a href="contact.html" class="faq-btn contact-btn">Contact Concierge</a>
-                <a href="index.html" class="faq-btn back-btn">Return to Store</a>
+    <!-- CTA -->
+    <section class="faq-cta" data-aos="fade-up" data-aos-duration="800">
+        <div class="faq-cta-inner">
+            <span class="faq-section-tag" style="text-align:center;display:block;">Still Have Questions?</span>
+            <h2>We're here<br><em>to help.</em></h2>
+            <p>Our team is available to answer any questions you have about our collection, your order, or finding the
+                perfect chair.</p>
+            <div class="faq-cta-btns">
+                <a href="./contact.html" class="faq-btn-primary">Contact Us &#8594;</a>
+                <a href="./index.html" class="faq-btn-ghost">Back to Home</a>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="./index.html" class="logo">RICHFIELD.</a>
+                <p style="margin-top:20px;color:rgba(255,255,255,0.35);font-size:0.85rem;line-height:1.7;">Premium
+                    artisan furniture designed for the modern home. Proudly serving Pakistan since 1998.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="./cardSearch.html">Collections</a></li>
+                    <li><a href="./aboutus.html">About Us</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="./faqs.html">FAQs</a></li>
+                    <li><a href="./comparison.html">Compare</a></li>
+                    <li><a href="./policy.html">Shop Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2026 Richfield. All Rights Reserved. &mdash; Karachi, Pakistan</div>
+    </footer>
 
     <script src="./js/nav-foot.js"></script>
-
+    <script>AOS.init({ duration: 800, once: true, offset: 50 });</script>
 </body>
 
 </html>
